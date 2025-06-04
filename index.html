@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Основные мета-теги -->
+    <title>Мой Ассистент - ИИ-помощник для малого бизнеса | Автоматизация бизнес-задач</title>
+    <meta name="description" content="Мой Ассистент - умный ИИ-агент для малого бизнеса. Создание лендингов, документов для налоговой, визиток, постов в соцсети, расчёт бюджета. Всё в одном месте, быстро и недорого.">
+    <meta name="keywords" content="ИИ помощник, малый бизнес, создание лендингов, документы для налоговой, визитки, посты в соцсети, бюджет, автоматизация бизнеса, ИП помощник">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./static/images/favicon.ico">
+</head>
+<body class="bg-primary-dark text-white">
+    <!-- Навигация -->
+    <nav class="fixed w-full top-0 z-50 bg-primary-dark/90 backdrop-filter backdrop-blur-lg border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-4">
+                    <img src="static/images/logo.png" alt="Логотип Мой Ассистент" class="h-10 w-auto object-contain hidden sm:block" loading="lazy" />
+                    <span class="text-xl font-bold text-white">Мой Ассистент</span>
+                </div>
+
+                <!-- Мобильное меню кнопка -->
+                <div class="mobile-menu md:hidden">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+
+                <!-- Навигация -->
+                <div class="hidden md:flex items-center space-x-8" id="main-nav">
+                    <a href="#services" class="nav-link text-gray-300 hover:text-white">Что умеет</a>
+                    <a href="#benefits" class="nav-link text-gray-300 hover:text-white">Преимущества</a>
+                    <a href="#how-it-works" class="nav-link text-gray-300 hover:text-white">Как работает</a>
+                    <a href="#pricing" class="nav-link text-gray-300 hover:text-white">Тарифы</a>
+                    <button class="registration-btn bg-primary-accent hover:bg-primary-transition text-white px-6 py-2 rounded-lg transition transform hover:scale-105" onclick="window.location.href='#'">
+                        Попробовать бесплатно
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen pt-32 section-gradient-dark section-transition">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-15 animate-pulse"></div>
+            <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tl from-purple-500 to-indigo-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-15 animate-pulse delay-1000"></div>
+        </div>
+
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="grid lg:grid-cols-2 gap-0 items-center overflow-hidden">
+    
+                <div class="space-y-8">
+                    <h1 class="heading-xl font-bold text-primary-light drop-shadow-lg">
+                        <span class="gradient-text hero-subtitle" style="font-size: 3rem; line-height: 1.2;">ИИ-агент для вашего<br>малого бизнеса</span>
+                    </h1>
+                    <p class="text-xl text-gray-200 max-w-lg">
+                        Один помощник заменит целую команду специалистов. 
+                        Создавайте лендинги, документы, визитки и многое другое за минуты, а не дни.
+                    </p>
+                <div class="flex flex-wrap gap-4">
+                        <button class="registration-btn w-64 px-10 py-2 bg-transparent border-2 border-primary-accent text-primary-light hover:bg-primary-accent/10 rounded-xl font-semibold transition shadow-lg whitespace-nowrap" onclick="window.location.href='#'">
+                            Начать бесплатно
+                        </button>
+                    </div>
+                    <div class="flex flex-wrap gap-6">
+            <div class="flex items-center space-x-2">
+                            <svg class="w-5 h-5 text-primary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-primary-light">3 дня бесплатно</span>
+                        </div>  
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-5 h-5 text-primary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="text-primary-light">Без настройки</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative overflow-visible">
+                    <div class="floating hero-floating overflow-visible">
+                        <img 
+                            src="./static/images/freepik-3d-model-octane-render-volumetric-highly-detailed-41257.png"
+                            alt="AI Interface" 
+                            class="w-full h-auto transform scale-110"
+                            style="transform: scaleX(-1);"
+                            loading="lazy"
+                            decoding="async">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary-dark to-transparent"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="relative py-20 bg-primary-dark overflow-hidden section-transition">
+        <div class="absolute inset-0 overflow-hidden"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <h2 class="text-3xl font-bold text-center mb-14 font-display" data-aos="fade-up">
+                Что умеет <span class="gradient-text">Мой Ассистент</span>
+            </h2>
+            
+            <div class="slider-3d-carousel" id="audience-carousel">
+                <div class="slider-carousel-container">
+                    <!-- Основная карточка на переднем плане -->
+                    <div class="slider-card slider-primary active" data-position="center">
+                        <div class="slider-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Создать лендинг</h3>
+                        <p>Создавайте современные продающие лендинги за минуты. ИИ подберёт дизайн, тексты и структуру под ваш бизнес. Никаких технических знаний не требуется.</p>
+                    </div>
+                    
+                    <!-- Вторичные карточки (позади слева и справа) -->
+                    <div class="slider-card slider-secondary" data-position="left">
+                        <div class="slider-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3>Документы для налоговой</h3>
+                        <p>Подготовка всех необходимых документов: декларации, отчёты, справки. ИИ учтёт все изменения в законодательстве и заполнит формы без ошибок.</p>
+                    </div>
+                    
+                    <div class="slider-card slider-secondary" data-position="right">
+                        <div class="slider-icon">
+                            <i class="fas fa-id-card"></i>
+                        </div>
+                        <h3>Визитки и брендинг</h3>
+                        <p>Создание визиток, логотипов и фирменного стиля. ИИ подберёт цвета, шрифты и композицию, которые идеально отразят суть вашего бизнеса.</p>
+                    </div>
+                    
+                    <!-- Дополнительные карточки для карусели (скрыты изначально) -->
+                    <div class="slider-card slider-hidden" data-position="hidden">
+                        <div class="slider-icon">
+                            <i class="fas fa-share-alt"></i>
+                        </div>
+                        <h3>Посты в соцсети</h3>
+                        <p>Генерация привлекательных постов для Instagram, Facebook, VK. Подбор хештегов, создание описаний и планирование контент-стратегии.</p>
+                    </div>
+                    
+                    <div class="slider-card slider-hidden" data-position="hidden">
+                        <div class="slider-icon">
+                            <i class="fas fa-calculator"></i>
+                        </div>
+                        <h3>Расчёт бюджета</h3>
+                        <p>Планирование финансов, расчёт рентабельности проектов, анализ затрат и доходов. ИИ поможет оптимизировать расходы и найти точки роста.</p>
+                    </div>
+                </div>
+                
+                <!-- Навигация карусели -->
+                <div class="carousel-navigation">
+                    <button class="carousel-control prev" aria-label="Предыдущая услуга">&lt;</button>
+                    <div class="carousel-indicators">
+                        <span class="indicator active" data-index="0"></span>
+                        <span class="indicator" data-index="1"></span>
+                        <span class="indicator" data-index="2"></span>
+                        <span class="indicator" data-index="3"></span>
+                        <span class="indicator" data-index="4"></span>
+                    </div>
+                    <button class="carousel-control next" aria-label="Следующая услуга">&gt;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="features" class="relative py-20 bg-primary-dark -mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="stats-item p-8 rounded-xl text-center" data-aos="fade-up">
+                    <div class="text-4xl font-bold text-primary-accent mb-2 drop-shadow-lg">95%</div>
+                    <div class="text-gray-200">Экономия времени</div>
+                </div>
+                
+                <div class="stats-item p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl font-bold text-secondary-accent mb-2 drop-shadow-lg">10 мин</div>
+                    <div class="text-gray-200">Среднее время задачи</div>
+                </div>
+                
+                <div class="stats-item p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl font-bold text-primary-transition mb-2 drop-shadow-lg">50+</div>
+                    <div class="text-gray-200">Типов задач</div>
+                </div>
+                
+                <div class="stats-item p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl font-bold text-tertiary-accent mb-2 drop-shadow-lg">24/7</div>
+                    <div class="text-gray-200">Доступность</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI vs Human Section -->
+    <section id="benefits" class="relative py-20 section-gradient-blue section-transition">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-20 font-display" data-aos="fade-up">
+                Почему Мой Ассистент лучше штатных сотрудников
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12 relative">
+                <!-- AI Side -->
+                <div class="glass-card p-8 rounded-2xl relative" data-aos="fade-right">
+                            <div class="flex items-center mb-8">
+                                <div class="w-12 h-12 bg-primary-accent rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-robot text-xl"></i>
+                                </div>
+                                <h3 class="text-2xl font-bold font-display">Мой Ассистент</h3>
+                            </div>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="ml-3">Работает 24/7 без перерывов и выходных</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="ml-3">Фиксированная цена за неограниченные задачи</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="ml-3">Глубокое понимание специфики вашего бизнеса</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="ml-3">Мгновенное выполнение задач любой сложности</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="ml-3">Консистентное качество без человеческих ошибок</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Human Side -->
+                <div class="glass-card p-8 rounded-2xl relative" data-aos="fade-left">
+                    <div class="flex items-center mb-8">
+                        <div class="w-12 h-12 bg-gray-600 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold font-display">Обычные сотрудники</h3>
+                    </div>
+                    
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-red-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="ml-3">Высокие зарплаты и социальные взносы</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-red-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="ml-3">Нужно время на изучение специфики бизнеса</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-red-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="ml-3">Могут болеть, уходить в отпуск или увольняться</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-red-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="ml-3">Ограниченная экспертиза в разных областях</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-red-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                            <span class="ml-3">Человеческий фактор и субъективность</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- VS Circle -->
+                <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+                    <div class="bg-white/10 backdrop-blur-lg rounded-full p-6 shadow-lg">
+                        <span class="text-2xl font-bold font-display">VS</span>
+                    </div>
+                    <div class="connect-lines"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="relative py-20 section-gradient-purple">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-20 font-display" data-aos="fade-up">
+                Как работает ИИ-помощник для бизнеса
+            </h2>
+
+            <div class="grid md:grid-cols-3 gap-8 relative">
+                <!-- Step 1 -->
+                <div class="glass-card p-8 rounded-2xl relative" data-aos="fade-up">
+                    <div class="w-12 h-12 bg-primary-accent rounded-full flex items-center justify-center text-xl font-bold mb-6">1</div>
+                    <h3 class="text-xl font-bold mb-4">Опишите задачу</h3>
+                    <p class="text-gray-300">
+                        Расскажите, что нужно сделать: создать лендинг, подготовить документы, рассчитать бюджет. Просто обычными словами.
+                    </p>
+                    
+                    <div class="absolute -right-4 top-1/2 transform translate-x-full -translate-y-1/2 hidden md:block z-10">
+                        <div class="w-8 h-0.5 bg-gradient-to-r from-primary-accent to-transparent"></div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="glass-card p-8 rounded-2xl relative" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-primary-medium rounded-full flex items-center justify-center text-xl font-bold mb-6">2</div>
+                    <h3 class="text-xl font-bold mb-4">ИИ анализирует</h3>
+                    <p class="text-gray-300">
+                        Система изучит ваш бизнес, подберет оптимальное решение и учтет все необходимые детали для качественного результата.
+                    </p>
+                    
+                    <div class="absolute -right-4 top-1/2 transform translate-x-full -translate-y-1/2 hidden md:block z-10">
+                        <div class="w-8 h-0.5 bg-gradient-to-r from-primary-medium to-transparent"></div>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="glass-card p-8 rounded-2xl relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-primary-transition rounded-full flex items-center justify-center text-xl font-bold mb-6">3</div>
+                    <h3 class="text-xl font-bold mb-4">Получите результат</h3>
+                    <p class="text-gray-300">
+                        За считанные минуты получите готовое решение: документы, макеты, тексты, расчёты — всё готово к использованию.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Interactive Demo -->
+            <div class="mt-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="glass-card p-6 rounded-2xl" data-aos="fade-right">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                            </div>
+                            <span class="text-sm text-gray-400">Демо режим</span>
+                        </div>
+
+                        <div class="space-y-6 mb-6">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-8 h-8 bg-gray-700 rounded-full flex-shrink-0"></div>
+                                <div class="bg-gray-700 p-4 rounded-2xl rounded-tl-none max-w-md">
+                                    <p class="text-sm">Нужно создать лендинг для нашего кафе. У нас домашняя кухня, уютная атмосфера, работаем с 8:00 до 22:00. Основные блюда - завтраки и обеды.</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start space-x-3 justify-end">
+                                <div class="bg-primary-accent p-4 rounded-2xl rounded-tr-none max-w-md">
+                                    <p class="text-sm mb-3">Отлично! Создам лендинг для вашего кафе:</p>
+                                    <ul class="text-sm space-y-2 list-disc pl-4">
+                                        <li>Уютный дизайн с тёплыми цветами</li>
+                                        <li>Блок с меню завтраков и обедов</li>
+                                        <li>Информация о времени работы</li>
+                                        <li>Форма бронирования столиков</li>
+                                        <li>Галерея атмосферы заведения</li>
+                                    </ul>
+                                    <div class="mt-3 text-xs flex items-center">
+                                        <i class="fas fa-clock mr-2"></i>
+                                        <span>Готово за 5 минут</span>
+                                    </div>
+                                </div>
+                                <div class="w-8 h-8 bg-primary-accent rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-robot text-sm"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative">
+                            <input type="text" 
+                                   placeholder="Опишите вашу бизнес-задачу..." 
+                                   class="w-full bg-gray-700 rounded-lg py-3 px-4 pr-12 focus:outline-none focus:ring-2 focus:ring-primary-accent">
+                            <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary-accent p-2 rounded-full hover:bg-primary-transition transition">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6" data-aos="fade-left">
+                        <div class="glass-card p-6 rounded-xl hover:scale-105 transition-all duration-300">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-primary-transition rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-brain text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold mb-1">Умное понимание</h3>
+                                    <p class="text-sm text-gray-400">ИИ учитывает специфику вашего бизнеса</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-xl hover:scale-105 transition-all duration-300">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-primary-accent rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-rocket text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold mb-1">Быстрое выполнение</h3>
+                                    <p class="text-sm text-gray-400">Любые задачи за считанные минуты</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-xl hover:scale-105 transition-all duration-300">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-primary-medium rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-star text-xl"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold mb-1">Профессиональное качество</h3>
+                                    <p class="text-sm text-gray-400">Результат как от команды экспертов</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Comparison Section -->
+    <section class="relative py-20 section-gradient-blue section-transition">
+        <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary-dark to-transparent pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <h2 class="text-3xl font-bold text-center mb-4 font-display" data-aos="fade-up">
+                Заменяет целую команду специалистов
+            </h2>
+            <p class="text-xl text-center text-gray-300 mb-20 max-w-3xl mx-auto" data-aos="fade-up">
+                Один ИИ-агент выполняет работу дизайнера, копирайтера, маркетолога, бухгалтера и SMM-специалиста
+            </p>
+
+            <div class="grid lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+                <!-- Content Side -->
+                <div class="space-y-8" data-aos="fade-right">
+                    <!-- Экономия -->
+                    <div class="glass-card p-8 rounded-2xl relative overflow-hidden">
+                        <h3 class="text-2xl font-bold mb-6">Экономия на зарплатах в месяц</h3>
+                        <div class="space-y-4">
+                            <!-- Специалисты -->
+                            <div class="space-y-3 mb-6">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm">👨‍💻 Веб-дизайнер</span>
+                                    <span class="text-sm text-red-400">80 000₽</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm">✍️ Копирайтер</span>
+                                    <span class="text-sm text-red-400">60 000₽</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm">📱 SMM-специалист</span>
+                                    <span class="text-sm text-red-400">70 000₽</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm">📊 Маркетолог</span>
+                                    <span class="text-sm text-red-400">90 000₽</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-sm">🧮 Бухгалтер</span>
+                                    <span class="text-sm text-red-400">50 000₽</span>
+                                </div>
+                                <hr class="border-gray-600">
+                                <div class="flex justify-between items-center font-semibold">
+                                    <span class="text-base">Всего команда</span>
+                                    <span class="text-base text-red-400">350 000₽</span>
+                                </div>
+                            </div>
+                            
+                            <div class="relative pt-1">
+                                <div class="flex h-3 mb-6">
+                                    <div class="w-full bg-red-400 rounded-full"></div>
+                                </div>
+                                
+                                <div class="flex justify-between items-center mb-2">
+                                    <div class="text-sm font-semibold">🤖 Мой Ассистент</div>
+                                    <div class="text-sm text-primary-accent font-semibold">2 990₽</div>
+                                </div>
+                                <div class="flex h-3 mb-6">
+                                    <div style="width: 0.85%" class="bg-primary-accent rounded-full"></div>
+                                </div>
+                                
+                                <div class="text-xs text-gray-400 italic mt-4">
+                                    * Экономия составляет 99% от стоимости штатных сотрудников
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Преимущества -->
+                    <div class="glass-card p-8 rounded-2xl relative overflow-hidden">
+                        <h3 class="text-2xl font-bold mb-6">Главные преимущества</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="ml-3">Всё в одном месте - не нужно искать разных исполнителей</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="ml-3">Понимает специфику именно вашего бизнеса</span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="ml-3">Консистентное качество и быстрое выполнение</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Image Side -->
+                <div class="relative" data-aos="fade-left">
+                    <div class="floating overflow-hidden">
+                        <img 
+                            src="./static/images/freepik-3d-model-octane-render-volumetric-highly-detailed-65190.png" 
+                            alt="AI Business Assistant" 
+                            class="w-full h-auto scale-x-[-1]"
+                            style="transform: scaleX(-1);"
+                            loading="lazy"
+                            decoding="async">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Section -->
+    <section id="pricing" class="relative py-20 section-gradient-blue">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4 font-display" data-aos="fade-up">
+                Тарифные планы
+            </h2>
+            <p class="text-gray-300 text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Выберите оптимальный тариф для автоматизации вашего бизнеса с помощью ИИ-технологий
+            </p>
+            <div class="bg-primary-accent/20 border border-primary-accent text-primary-dark rounded-xl px-6 py-4 text-center mb-8 font-medium shadow-md max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">
+                <span>Первые 3 дня бесплатно для всех новых пользователей!</span>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
+    <!-- Starter Plan -->
+    <div class="glass-card p-8 rounded-2xl relative hover:scale-105 transition-all duration-300 flex flex-col h-full" data-aos="fade-up">
+        <h3 class="text-xl font-bold mb-4">Стартер</h3>
+        <div class="flex items-baseline mb-8">
+            <span class="text-4xl font-bold">1 490₽</span>
+            <span class="text-gray-400 ml-2">/месяц</span>
+        </div>
+        <ul class="space-y-4 mb-8">
+            <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>50 задач в месяц</span>
+            </li>
+            <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Создание лендингов и визиток</span>
+            </li>
+            <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Посты для соцсетей</span>
+            </li>
+            <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Базовые документы
+            </li>
+        </ul>
+        <button class="registration-btn w-full py-3 px-6 border-2 border-primary-accent bg-white text-primary-accent hover:bg-primary-accent hover:text-white rounded-xl transition-colors text-center font-medium mt-auto" onclick="window.location.href='#'">
+            Попробовать бесплатно
+        </button>
+    </div>
+    <!-- Business Plan -->
+    <div class="glass-card p-8 rounded-2xl relative hover:scale-105 transition-all duration-300 transform scale-105 border-2 border-primary-accent shadow-lg shadow-primary-accent/20" 
+        data-aos="fade-up" data-aos-delay="100">
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <span class="bg-primary-accent text-sm px-4 py-1 rounded-full font-bold text-primary-dark shadow-md">Популярный</span>
+        </div>
+        <h3 class="text-xl font-bold mb-4">Бизнес</h3>
+        <div class="flex items-baseline mb-8">
+            <span class="text-4xl font-bold">2 990₽</span>
+            <span class="text-gray-400 ml-2">/месяц</span>
+        </div>
+        <ul class="space-y-4 mb-8">
+            <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Неограниченное количество задач</span>
+            </li>
+            <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Все типы документов и материалов</span>
+            </li>
+            <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                <span>Налоговые документы и отчёты</span>
+            </li>
+            <li class="flex items-center">
+                <svg class="w-5 h-5 text-primary-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+                Приоритетная поддержка
+            </li>
+        </ul>
+        <button class="registration-btn w-full py-3 px-6 bg-primary-accent hover:bg-primary-transition rounded-xl transition-colors text-center font-medium" onclick="window.location.href='#'">
+            Выбрать план
+        </button>
+    </div>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="relative py-20 bg-primary-dark overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary-medium to-primary-dark opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4 font-display" data-aos="fade-up">
+                    Что говорят наши клиенты
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Более 1000 предпринимателей уже автоматизировали свой бизнес с помощью нашего ИИ-ассистента
+                </p>
+            </div>
+
+            <!-- Testimonials Slider -->
+            <div class="testimonials-container relative" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonials-slider flex transition-transform duration-500 ease-in-out">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 px-4 flex-shrink-0">
+                        <div class="glass-card p-8 rounded-2xl h-full relative">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl">
+                                    👩‍💼
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-lg">Анна Смирнова</h4>
+                                    <p class="text-gray-400 text-sm">Владелец кафе "Утро"</p>
+                                </div>
+                            </div>
+                            <div class="flex mb-4">
+                                <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed italic">
+                                "За 2 дня создал полноценный лендинг для своего кафе, настроил рекламу в соцсетях и подготовил все документы для налоговой. Раньше на это ушло бы несколько недель и куча денег!"
+                            </p>
+                            <div class="absolute top-6 right-6 text-primary-accent/20 text-4xl font-serif">"</div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 px-4 flex-shrink-0">
+                        <div class="glass-card p-8 rounded-2xl h-full relative">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl">
+                                    👨‍💻
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-lg">Михаил Козлов</h4>
+                                    <p class="text-gray-400 text-sm">IT-консультант</p>
+                                </div>
+                            </div>
+                            <div class="flex mb-4">
+                                <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed italic">
+                                "Использую для подготовки коммерческих предложений и презентаций. Качество на уровне дорогих агентств, а скорость в 10 раз выше. Клиенты в восторге от результата!"
+                            </p>
+                            <div class="absolute top-6 right-6 text-primary-accent/20 text-4xl font-serif">"</div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 px-4 flex-shrink-0">
+                        <div class="glass-card p-8 rounded-2xl h-full relative">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl">
+                                    👩‍🎨
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-lg">Елена Волкова</h4>
+                                    <p class="text-gray-400 text-sm">Салон красоты "Стиль"</p>
+                                </div>
+                            </div>
+                            <div class="flex mb-4">
+                                <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed italic">
+                                "Создаю контент для Instagram, визитки, флаеры и веду бухгалтерию. Один ассистент заменил мне 4 специалистов. Экономлю 200 тысяч рублей в месяц!"
+                            </p>
+                            <div class="absolute top-6 right-6 text-primary-accent/20 text-4xl font-serif">"</div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="testimonial-slide w-full md:w-1/2 lg:w-1/3 px-4 flex-shrink-0">
+                        <div class="glass-card p-8 rounded-2xl h-full relative">
+                            <div class="flex items-center mb-6">
+                                <div class="w-12 h-12 rounded-full flex items-center justify-center text-2xl">
+                                    👨‍💼
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="font-semibold text-lg">Дмитрий Петров</h4>
+                                    <p class="text-gray-400 text-sm">Интернет-магазин "ТехноМир"</p>
+                                </div>
+                            </div>
+                            <div class="flex mb-4">
+                                <span class="text-yellow-400">⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <p class="text-gray-300 leading-relaxed italic">
+                                "Автоматизировал создание карточек товаров, описаний, рекламных постов и расчет бюджета на рекламу. Продажи выросли на 40%, а времени трачу в 3 раза меньше!"
+                            </p>
+                            <div class="absolute top-6 right-6 text-primary-accent/20 text-4xl font-serif">"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="flex justify-center mt-8 space-x-3">
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-600 transition-colors duration-300 active" data-slide="0"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-600 transition-colors duration-300" data-slide="1"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-600 transition-colors duration-300" data-slide="2"></button>
+                    <button class="testimonial-dot w-3 h-3 rounded-full bg-gray-600 transition-colors duration-300" data-slide="3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="relative py-20 section-gradient-purple">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                <h2 class="text-3xl font-bold mb-6 font-display" data-aos="fade-up">
+                    Начните автоматизировать бизнес-задачи прямо сейчас
+                </h2>
+                <p class="text-xl text-gray-200 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Доступ к ИИ-помощнику для создания лендингов, подготовки документов и автоматизации рутинных задач
+                </p>
+                <div class="flex flex-wrap justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
+<button class="registration-btn w-64 px-10 py-2 bg-transparent border-2 border-primary-accent text-primary-light hover:bg-primary-accent/10 rounded-xl font-semibold transition shadow-lg whitespace-nowrap" onclick="window.location.href='/business_ai/auth'">
+                        Попробовать бесплатно
+                    </button>
+                    
+                </div>
+                <div class="mt-12 flex flex-wrap justify-center gap-8 text-sm">
+                    <div class="flex items-center bg-white/5 px-4 py-2 rounded-full shadow-inner">
+                        <svg class="w-5 h-5 text-tertiary-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <span class="text-primary-light">Без привязки карты</span>
+                    </div>
+                    <div class="flex items-center bg-white/5 px-4 py-2 rounded-full shadow-inner">
+                        <svg class="w-5 h-5 text-tertiary-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <span class="text-primary-light">Отмена в любой момент</span>
+                    </div>
+                    <div class="flex items-center bg-white/5 px-4 py-2 rounded-full shadow-inner">
+                        <svg class="w-5 h-5 text-tertiary-accent mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <span class="text-primary-light">Поддержка 24/7</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-16 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center mb-2">
+    <img src="static/images/logo.png" alt="Логотип Мой Ассистент" class="h-10 w-auto object-contain mr-4" loading="lazy" />
+    <span class="text-2xl font-bold gradient-text font-display">Мой Ассистент</span>
+</div>
+<p class="text-gray-400 mb-6 mt-2">
+    ИИ-помощник для автоматизации задач малого бизнеса - от создания лендингов до подготовки документов
+</p>
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-telegram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-vk text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-green-400 transition">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Продукт</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Услуги</a></li>
+                        <li><a href="#pricing" class="text-gray-400 hover:text-white transition">Тарифы</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Автоматизация</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Интеграции</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Поддержка</h4>
+                    <ul class="space-y-4">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Руководства</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Примеры</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Сообщество</a></li>
+                        <li><a href="#" data-status class="text-gray-400 hover:text-white transition">Статус сервиса</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Контакты</h4>
+                    <div class="space-y-4">
+                        <div class="company-info-group">
+                            <p class="text-gray-400">
+                                <span class="company-info-label">ООО "БизнесАссистент"</span><br>
+                                115114, г. Москва,<br>
+                                ул. Деловая, д. 15, офис 42
+                            </p>
+                        </div>
+                        <div class="company-info-group">
+                            <p class="text-gray-400">
+                                <span class="company-info-label">Генеральный директор:</span><br>
+                                Петров Алексей Сергеевич
+                            </p>
+                        </div>
+                        <div class="company-info-group">
+                            <a href="tel:+74951234567" class="text-gray-400 hover:text-white transition flex items-center">
+                                <i class="fas fa-phone mr-2"></i>
+                                +7 (495) 123-45-67
+                            </a>
+                        </div>
+                        <div class="company-info-group">
+                            <a href="mailto:info@assistant.pro" class="text-gray-400 hover:text-white transition flex items-center">
+                                <i class="fas fa-envelope mr-2"></i>
+                                info@assistant.pro
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm">© 2025 Мой Ассистент. Все права защищены.</p>
+                    <div class="company-info text-sm mt-8 md:mt-0">
+                        <p>ОГРН 1187746829050 ИНН 7709876543 КПП 770901001</p>
+                        <p>р/с 40702810938000123456 в ПАО «СБЕРБАНК», г. Москва</p>
+                        <p>БИК 044525225 к/с 30101810400000000225</p>
+                    </div>
+                    <div class="mt-4 md:mt-0 space-x-4">
+                        <a href="./privacy" class="text-gray-400 hover:text-white transition text-sm">Политика конфиденциальности</a>
+                        <a href="./offer" class="text-gray-400 hover:text-white transition text-sm">Публичная оферта</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Инициализация AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+
+        // Мобильное меню
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const nav = document.getElementById('main-nav');
+            
+            if (mobileMenu && nav) {
+                mobileMenu.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    nav.classList.toggle('active');
+                    document.body.style.overflow = this.classList.contains('active') ? 'hidden' : '';
+                });
+                
+                // Закрытие меню при клике на ссылку
+                const navLinks = nav.querySelectorAll('a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('active');
+                        nav.classList.remove('active');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
+            
+            // Плавный скролл для всех ссылок с хешем
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
