@@ -6,162 +6,163 @@ AOS.init({
 });
 
 /**
- * Инициализация 3D-слайдера под хироблоком
+ * Инициализация 3D-слайдеров
  */
-function initHeroSlider() {
-    const sliderContainer = document.querySelector('.slider-3d-carousel');
-    if (!sliderContainer) return;
-
-    const cards = sliderContainer.querySelectorAll('.slider-card');
-    const prevButton = sliderContainer.querySelector('.carousel-control.prev');
-    const nextButton = sliderContainer.querySelector('.carousel-control.next');
-    const indicators = sliderContainer.querySelectorAll('.indicator');
-
-    if (!prevButton || !nextButton || cards.length === 0) return;
-
-    // Массив всех карточек
-    const allCards = Array.from(cards);
-    // Текущий индекс активной карточки
-    let currentIndex = 0;
-    // Задержка для автоматической прокрутки
-    const autoScrollDelay = 5000;
-    // Интервал автоматической прокрутки
-    let autoScrollInterval;
+function init3DSlider() {
+    const sliders = document.querySelectorAll('.slider-3d-carousel');
     
-    /**
-     * Обновляет слайдер, расставляя карточки в нужном порядке
-     */
-    function updateSlider() {
-        // Обновляем индикаторы
-        indicators.forEach((indicator, index) => {
-            indicator.classList.toggle('active', index === currentIndex);
-        });
+    sliders.forEach(sliderContainer => {
+        const cards = sliderContainer.querySelectorAll('.slider-card');
+        const prevButton = sliderContainer.querySelector('.carousel-control.prev');
+        const nextButton = sliderContainer.querySelector('.carousel-control.next');
+        const indicators = sliderContainer.querySelectorAll('.indicator');
+
+        if (!prevButton || !nextButton || cards.length === 0) return;
+
+        // Массив всех карточек
+        const allCards = Array.from(cards);
+        // Текущий индекс активной карточки
+        let currentIndex = 0;
+        // Задержка для автоматической прокрутки
+        const autoScrollDelay = 5000;
+        // Интервал автоматической прокрутки
+        let autoScrollInterval;
         
-        // Обновляем классы и атрибуты карточек
-        allCards.forEach((card, index) => {
-            // Удаляем все классы позиций
-            card.classList.remove('slider-primary', 'slider-secondary', 'slider-hidden');
+        /**
+         * Обновляет слайдер, расставляя карточки в нужном порядке
+         */
+        function updateSlider() {
+            // Обновляем индикаторы
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentIndex);
+            });
             
-            if (index === currentIndex) {
-                // Главная карточка - по центру
-                card.classList.add('slider-primary');
-                card.setAttribute('data-position', 'center');
-            } else if (index === getPrevIndex(currentIndex)) {
-                // Предыдущая карточка - слева
-                card.classList.add('slider-secondary');
-                card.setAttribute('data-position', 'left');
-            } else if (index === getNextIndex(currentIndex)) {
-                // Следующая карточка - справа
-                card.classList.add('slider-secondary');
-                card.setAttribute('data-position', 'right');
-            } else {
-                // Все остальные карточки - скрыты
-                card.classList.add('slider-hidden');
-                card.setAttribute('data-position', 'hidden');
-            }
-        });
-    }
+            // Обновляем классы и атрибуты карточек
+            allCards.forEach((card, index) => {
+                // Удаляем все классы позиций
+                card.classList.remove('slider-primary', 'slider-secondary', 'slider-hidden');
+                
+                if (index === currentIndex) {
+                    // Главная карточка - по центру
+                    card.classList.add('slider-primary');
+                    card.setAttribute('data-position', 'center');
+                } else if (index === getPrevIndex(currentIndex)) {
+                    // Предыдущая карточка - слева
+                    card.classList.add('slider-secondary');
+                    card.setAttribute('data-position', 'left');
+                } else if (index === getNextIndex(currentIndex)) {
+                    // Следующая карточка - справа
+                    card.classList.add('slider-secondary');
+                    card.setAttribute('data-position', 'right');
+                } else {
+                    // Все остальные карточки - скрыты
+                    card.classList.add('slider-hidden');
+                    card.setAttribute('data-position', 'hidden');
+                }
+            });
+        }
 
-    /**
-     * Получает индекс предыдущей карточки с учетом цикличности
-     */
-    function getPrevIndex(index) {
-        return (index === 0) ? allCards.length - 1 : index - 1;
-    }
+        /**
+         * Получает индекс предыдущей карточки с учетом цикличности
+         */
+        function getPrevIndex(index) {
+            return (index === 0) ? allCards.length - 1 : index - 1;
+        }
 
-    /**
-     * Получает индекс следующей карточки с учетом цикличности
-     */
-    function getNextIndex(index) {
-        return (index === allCards.length - 1) ? 0 : index + 1;
-    }
+        /**
+         * Получает индекс следующей карточки с учетом цикличности
+         */
+        function getNextIndex(index) {
+            return (index === allCards.length - 1) ? 0 : index + 1;
+        }
 
-    /**
-     * Переключает на следующую карточку
-     */
-    function scrollToNext() {
-        currentIndex = getNextIndex(currentIndex);
-        updateSlider();
-    }
-
-    /**
-     * Переключает на предыдущую карточку
-     */
-    function scrollToPrev() {
-        currentIndex = getPrevIndex(currentIndex);
-        updateSlider();
-    }
-
-    /**
-     * Запускает автоматическую прокрутку
-     */
-    function startAutoScroll() {
-        stopAutoScroll(); // Останавливаем предыдущий интервал, если он есть
-        autoScrollInterval = setInterval(scrollToNext, autoScrollDelay);
-    }
-
-    /**
-     * Останавливает автоматическую прокрутку
-     */
-    function stopAutoScroll() {
-        clearInterval(autoScrollInterval);
-    }
-    
-    // Обработчики событий кнопок
-    nextButton.addEventListener('click', () => {
-        scrollToNext();
-        stopAutoScroll();
-        startAutoScroll(); // Перезапускаем автопрокрутку при ручном взаимодействии
-    });
-
-    prevButton.addEventListener('click', () => {
-        scrollToPrev();
-        stopAutoScroll();
-        startAutoScroll();
-    });
-    
-    // Обработчики событий для индикаторов
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            currentIndex = index;
+        /**
+         * Переключает на следующую карточку
+         */
+        function scrollToNext() {
+            currentIndex = getNextIndex(currentIndex);
             updateSlider();
+        }
+
+        /**
+         * Переключает на предыдущую карточку
+         */
+        function scrollToPrev() {
+            currentIndex = getPrevIndex(currentIndex);
+            updateSlider();
+        }
+
+        /**
+         * Запускает автоматическую прокрутку
+         */
+        function startAutoScroll() {
+            stopAutoScroll(); // Останавливаем предыдущий интервал, если он есть
+            autoScrollInterval = setInterval(scrollToNext, autoScrollDelay);
+        }
+
+        /**
+         * Останавливает автоматическую прокрутку
+         */
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+        
+        // Обработчики событий кнопок
+        nextButton.addEventListener('click', () => {
+            scrollToNext();
+            stopAutoScroll();
+            startAutoScroll(); // Перезапускаем автопрокрутку при ручном взаимодействии
+        });
+
+        prevButton.addEventListener('click', () => {
+            scrollToPrev();
             stopAutoScroll();
             startAutoScroll();
         });
-    });
+        
+        // Обработчики событий для индикаторов
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = index;
+                updateSlider();
+                stopAutoScroll();
+                startAutoScroll();
+            });
+        });
 
-    // Останавливаем автопрокрутку при наведении на слайдер
-    sliderContainer.addEventListener('mouseenter', stopAutoScroll);
-    sliderContainer.addEventListener('mouseleave', startAutoScroll);
-    
-    // Поддержка свайпов для мобильных устройств
-    let touchStartX = 0;
-    let touchEndX = 0;
-    
-    sliderContainer.addEventListener('touchstart', (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-    }, { passive: true });
-    
-    sliderContainer.addEventListener('touchend', (e) => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    }, { passive: true });
-    
-    function handleSwipe() {
-        if (touchEndX < touchStartX - 50) {
-            // Свайп влево - следующая карточка
-            scrollToNext();
-        } else if (touchEndX > touchStartX + 50) {
-            // Свайп вправо - предыдущая карточка
-            scrollToPrev();
+        // Останавливаем автопрокрутку при наведении на слайдер
+        sliderContainer.addEventListener('mouseenter', stopAutoScroll);
+        sliderContainer.addEventListener('mouseleave', startAutoScroll);
+        
+        // Поддержка свайпов для мобильных устройств
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        sliderContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        sliderContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                // Свайп влево - следующая карточка
+                scrollToNext();
+            } else if (touchEndX > touchStartX + 50) {
+                // Свайп вправо - предыдущая карточка
+                scrollToPrev();
+            }
+            stopAutoScroll();
+            startAutoScroll();
         }
-        stopAutoScroll();
+        
+        // Инициализация слайдера
+        updateSlider();
         startAutoScroll();
-    }
-    
-    // Инициализация слайдера
-    updateSlider();
-    startAutoScroll();
+    });
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -271,7 +272,7 @@ function showTooltip(message) {
 
 document.addEventListener('DOMContentLoaded', function() {
     // Инициализация слайдера
-    initHeroSlider();
+    init3DSlider();
     
     // Добавляем обработчики для ссылок "в разработке"
     const devLinks = [
@@ -297,110 +298,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Testimonials Slider
-class TestimonialsSlider {
-    constructor() {
-        this.currentSlide = 0;
-        this.totalSlides = 4;
-        this.slider = document.querySelector('.testimonials-slider');
-        this.dots = document.querySelectorAll('.testimonial-dot');
-        this.autoPlayInterval = null;
-        
-        this.init();
-    }
-    
-    init() {
-        if (!this.slider || !this.dots.length) return;
-        
-        // Set up dot navigation
-        this.dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => this.goToSlide(index));
-        });
-        
-        // Update initial state
-        this.updateSlider();
-        this.updateDots();
-        
-        // Start auto-play
-        this.startAutoPlay();
-        
-        // Pause on hover
-        const container = document.querySelector('.testimonials-container');
-        if (container) {
-            container.addEventListener('mouseenter', () => this.stopAutoPlay());
-            container.addEventListener('mouseleave', () => this.startAutoPlay());
-        }
-        
-        // Handle responsive behavior
-        this.handleResize();
-        window.addEventListener('resize', () => this.handleResize());
-    }
-    
-    goToSlide(slideIndex) {
-        // Позволяем переходить к любому слайду в диапазоне [0, totalSlides-1]
-        this.currentSlide = Math.max(0, Math.min(slideIndex, this.totalSlides - 1));
-        this.updateSlider();
-        this.updateDots();
-    }
-    
-    nextSlide() {
-        // Переходим к следующему слайду с зацикливанием
-        this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
-        this.updateSlider();
-        this.updateDots();
-    }
-    
-    updateSlider() {
-        if (!this.slider) return;
-        
-        // Рассчитываем сдвиг в зависимости от разрешения экрана
-        const slideWidth = this.getSlideWidth();
-        const translateX = -this.currentSlide * slideWidth;
-        this.slider.style.transform = `translateX(${translateX}%)`;
-    }
-    
-    getSlideWidth() {
-        const width = window.innerWidth;
-        if (width < 769) return 100; // Mobile: 1 slide
-        if (width < 1024) return 50;  // Tablet: 2 slides
-        return 33.333; // Desktop: 3 slides
-    }
-    
-    updateDots() {
-        this.dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === this.currentSlide);
-        });
-    }
-    
-    startAutoPlay() {
-        this.stopAutoPlay();
-        this.autoPlayInterval = setInterval(() => {
-            this.nextSlide();
-        }, 4000); // Автопрокрутка каждые 4 секунды
-    }
-    
-    stopAutoPlay() {
-        if (this.autoPlayInterval) {
-            clearInterval(this.autoPlayInterval);
-            this.autoPlayInterval = null;
-        }
-    }
-    
-    handleResize() {
-        // Пересчитываем позицию слайдера при изменении размера
-        this.updateSlider();
-        this.updateDots();
-    }
-    
-    getMaxVisibleSlides() {
-        const width = window.innerWidth;
-        if (width < 769) return 1;
-        if (width < 1024) return 2;
-        return 3;
-    }
-}
-
-// Initialize testimonials slider when DOM is loaded
+// Initialize all sliders when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
-    new TestimonialsSlider();
+    init3DSlider();
 });
