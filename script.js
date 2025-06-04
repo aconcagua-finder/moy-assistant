@@ -337,12 +337,14 @@ class TestimonialsSlider {
     }
     
     goToSlide(slideIndex) {
-        this.currentSlide = slideIndex;
+        // Позволяем переходить к любому слайду в диапазоне [0, totalSlides-1]
+        this.currentSlide = Math.max(0, Math.min(slideIndex, this.totalSlides - 1));
         this.updateSlider();
         this.updateDots();
     }
     
     nextSlide() {
+        // Переходим к следующему слайду с зацикливанием
         this.currentSlide = (this.currentSlide + 1) % this.totalSlides;
         this.updateSlider();
         this.updateDots();
@@ -351,6 +353,7 @@ class TestimonialsSlider {
     updateSlider() {
         if (!this.slider) return;
         
+        // Рассчитываем сдвиг в зависимости от разрешения экрана
         const slideWidth = this.getSlideWidth();
         const translateX = -this.currentSlide * slideWidth;
         this.slider.style.transform = `translateX(${translateX}%)`;
@@ -373,7 +376,7 @@ class TestimonialsSlider {
         this.stopAutoPlay();
         this.autoPlayInterval = setInterval(() => {
             this.nextSlide();
-        }, 5000); // Change slide every 5 seconds
+        }, 4000); // Автопрокрутка каждые 4 секунды
     }
     
     stopAutoPlay() {
@@ -384,16 +387,9 @@ class TestimonialsSlider {
     }
     
     handleResize() {
-        // Recalculate slider position on resize
+        // Пересчитываем позицию слайдера при изменении размера
         this.updateSlider();
-        
-        // Adjust current slide if needed based on new layout
-        const maxSlides = this.getMaxVisibleSlides();
-        if (this.currentSlide >= this.totalSlides - maxSlides + 1) {
-            this.currentSlide = Math.max(0, this.totalSlides - maxSlides);
-            this.updateSlider();
-            this.updateDots();
-        }
+        this.updateDots();
     }
     
     getMaxVisibleSlides() {
