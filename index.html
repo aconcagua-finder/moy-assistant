@@ -15,14 +15,14 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./static/images/favicon.ico">
 </head>
-<body class="bg-primary-dark text-white">
+<body class="bg-primary-light text-primary">
     <!-- Навигация -->
-    <nav class="fixed w-full top-0 z-50 bg-primary-dark/90 backdrop-filter backdrop-blur-lg border-b border-gray-800">
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-filter backdrop-blur-lg border-b border-gray-200 shadow-sm">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center space-x-4">
                     <img src="static/images/logo.png" alt="Логотип Мой Ассистент" class="h-10 w-auto object-contain hidden sm:block" loading="lazy" />
-                    <span class="text-xl font-bold text-white">Мой Ассистент</span>
+                    <span class="text-xl font-bold text-gray-700">Мой Ассистент</span>
                 </div>
 
                 <!-- Мобильное меню кнопка -->
@@ -34,11 +34,11 @@
 
                 <!-- Навигация -->
                 <div class="hidden md:flex items-center space-x-8" id="main-nav">
-                    <a href="#services" class="nav-link text-gray-300 hover:text-white">Что умеет</a>
-                    <a href="#benefits" class="nav-link text-gray-300 hover:text-white">Преимущества</a>
-                    <a href="#how-it-works" class="nav-link text-gray-300 hover:text-white">Как работает</a>
-                    <a href="#pricing" class="nav-link text-gray-300 hover:text-white">Тарифы</a>
-                    <button class="registration-btn bg-primary-accent hover:bg-primary-transition text-white px-6 py-2 rounded-lg transition transform hover:scale-105" onclick="window.location.href='#'">
+                    <a href="#services" class="nav-link text-gray-600 hover:text-gray-700">Что умеет</a>
+                    <a href="#benefits" class="nav-link text-gray-600 hover:text-gray-700">Преимущества</a>
+                    <a href="#how-it-works" class="nav-link text-gray-600 hover:text-gray-700">Как работает</a>
+                    <a href="#pricing" class="nav-link text-gray-600 hover:text-gray-700">Тарифы</a>
+                    <button class="registration-btn bg-primary-accent hover:bg-primary-transition text-white px-6 py-2 rounded-lg transition transform hover:scale-105 shadow-md" onclick="window.location.href='#'">
                         Попробовать бесплатно
                     </button>
                 </div>
@@ -47,25 +47,24 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen pt-32 section-gradient-dark section-transition">
-        <div class="absolute inset-0 overflow-hidden">
-            <div class="absolute top-0 right-0 w-1/2 h-1/2 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-15 animate-pulse"></div>
-            <div class="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tl from-purple-500 to-indigo-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-15 animate-pulse delay-1000"></div>
+    <section class="relative min-h-screen pt-32 hero-gradient-bg section-transition">
+        <div class="absolute inset-0 overflow-hidden" style="z-index: 2;">
+            <!-- Чистый фон для плавных градиентов -->
         </div>
 
-        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 relative" style="z-index: 10;">
             <div class="grid lg:grid-cols-2 gap-0 items-center overflow-hidden">
     
                 <div class="space-y-8">
-                    <h1 class="heading-xl font-bold text-primary-light drop-shadow-lg">
-                        <span class="gradient-text hero-subtitle" style="font-size: 3rem; line-height: 1.2;">ИИ-агент для вашего<br>малого бизнеса</span>
+                    <h1 class="heading-xl font-bold text-gray-700">
+                        <span class="gradient-text hero-subtitle" style="font-size: 3rem; line-height: 1.2;">ИИ-агент<br>для малого бизнеса</span>
                     </h1>
-                    <p class="text-xl text-gray-200 max-w-lg">
+                    <p class="text-xl text-gray-600 max-w-lg leading-relaxed">
                         Один помощник заменит целую команду специалистов. 
                         Создавайте лендинги, документы, визитки и многое другое за минуты, а не дни.
                     </p>
                 <div class="flex flex-wrap gap-4">
-                        <button class="registration-btn w-64 px-10 py-2 bg-transparent border-2 border-primary-accent text-primary-light hover:bg-primary-accent/10 rounded-xl font-semibold transition shadow-lg whitespace-nowrap" onclick="window.location.href='#'">
+                        <button class="registration-btn w-64 px-10 py-2 bg-primary-accent border-2 border-primary-accent text-white hover:bg-primary-transition hover:border-primary-transition rounded-xl font-semibold transition shadow-lg whitespace-nowrap" onclick="window.location.href='#'">
                             Начать бесплатно
                         </button>
                     </div>
@@ -74,13 +73,13 @@
                             <svg class="w-5 h-5 text-primary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="text-primary-light">3 дня бесплатно</span>
+                            <span class="text-gray-700 font-medium">3 дня бесплатно</span>
                         </div>  
                         <div class="flex items-center space-x-2">
                             <svg class="w-5 h-5 text-primary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="text-primary-light">Без настройки</span>
+                            <span class="text-gray-700 font-medium">Без настройки</span>
                         </div>
                     </div>
                 </div>
@@ -90,8 +89,7 @@
                         <img 
                             src="./static/images/freepik-3d-model-octane-render-volumetric-highly-detailed-41257.png"
                             alt="AI Interface" 
-                            class="w-full h-auto transform scale-110"
-                            style="transform: scaleX(-1);"
+                            class="w-full h-auto transform scale-90"
                             loading="lazy"
                             decoding="async">
                     </div>
@@ -99,14 +97,14 @@
             </div>
         </div>
 
-        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary-dark to-transparent"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="relative py-20 bg-primary-dark overflow-hidden section-transition">
+    <section id="services" class="relative py-20 bg-gradient-soft-green overflow-hidden section-transition">
         <div class="absolute inset-0 overflow-hidden"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <h2 class="text-3xl font-bold text-center mb-14 font-display" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-14 font-display text-gray-700" data-aos="fade-up">
                 Что умеет <span class="gradient-text">Мой Ассистент</span>
             </h2>
             
@@ -173,36 +171,36 @@
     </section>
 
     <!-- Stats Section -->
-    <section id="features" class="relative py-20 bg-primary-dark -mt-16">
+    <section id="features" class="relative py-20 bg-gradient-hero -mt-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="stats-item p-8 rounded-xl text-center" data-aos="fade-up">
-                    <div class="text-4xl font-bold text-primary-accent mb-2 drop-shadow-lg">95%</div>
-                    <div class="text-gray-200">Экономия времени</div>
+                <div class="stats-item glass-card p-8 rounded-xl text-center" data-aos="fade-up">
+                    <div class="text-4xl font-bold text-primary-accent mb-2">95%</div>
+                    <div class="text-gray-700 font-medium">Экономия времени</div>
                 </div>
                 
-                <div class="stats-item p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="text-4xl font-bold text-secondary-accent mb-2 drop-shadow-lg">10 мин</div>
-                    <div class="text-gray-200">Среднее время задачи</div>
+                <div class="stats-item glass-card p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl font-bold text-secondary-accent mb-2">10 мин</div>
+                    <div class="text-gray-700 font-medium">Среднее время задачи</div>
                 </div>
                 
-                <div class="stats-item p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="text-4xl font-bold text-primary-transition mb-2 drop-shadow-lg">50+</div>
-                    <div class="text-gray-200">Типов задач</div>
+                <div class="stats-item glass-card p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl font-bold text-primary-transition mb-2">50+</div>
+                    <div class="text-gray-700 font-medium">Типов задач</div>
                 </div>
                 
-                <div class="stats-item p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="300">
-                    <div class="text-4xl font-bold text-tertiary-accent mb-2 drop-shadow-lg">24/7</div>
-                    <div class="text-gray-200">Доступность</div>
+                <div class="stats-item glass-card p-8 rounded-xl text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl font-bold text-tertiary-accent mb-2">24/7</div>
+                    <div class="text-gray-700 font-medium">Доступность</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- AI vs Human Section -->
-    <section id="benefits" class="relative py-20 section-gradient-blue section-transition">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-20 font-display" data-aos="fade-up">
+    <section id="benefits" class="relative py-20 comparison-gradient-bg section-transition">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative" style="z-index: 10;">
+            <h2 class="text-3xl font-bold text-center mb-20 font-display text-gray-700" data-aos="fade-up">
                 Почему Мой Ассистент лучше штатных сотрудников
             </h2>
 
@@ -210,10 +208,10 @@
                 <!-- AI Side -->
                 <div class="glass-card p-8 rounded-2xl relative" data-aos="fade-right">
                             <div class="flex items-center mb-8">
-                                <div class="w-12 h-12 bg-primary-accent rounded-xl flex items-center justify-center mr-4">
-                                    <i class="fas fa-robot text-xl"></i>
+                                <div class="w-12 h-12 bg-primary-accent rounded-xl flex items-center justify-center mr-4 shadow-md">
+                                    <i class="fas fa-robot text-xl text-white"></i>
                                 </div>
-                                <h3 class="text-2xl font-bold font-display">Мой Ассистент</h3>
+                                <h3 class="text-2xl font-bold font-display text-gray-700">Мой Ассистент</h3>
                             </div>
                     
                     <ul class="space-y-6">
@@ -221,31 +219,31 @@
                             <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="ml-3">Работает 24/7 без перерывов и выходных</span>
+                            <span class="ml-3 text-gray-700">Работает 24/7 без перерывов и выходных</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="ml-3">Фиксированная цена за неограниченные задачи</span>
+                            <span class="ml-3 text-gray-700">Фиксированная цена за неограниченные задачи</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="ml-3">Глубокое понимание специфики вашего бизнеса</span>
+                            <span class="ml-3 text-gray-700">Глубокое понимание специфики вашего бизнеса</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="ml-3">Мгновенное выполнение задач любой сложности</span>
+                            <span class="ml-3 text-gray-700">Мгновенное выполнение задач любой сложности</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span class="ml-3">Консистентное качество без человеческих ошибок</span>
+                            <span class="ml-3 text-gray-700">Консистентное качество без человеческих ошибок</span>
                         </li>
                     </ul>
                 </div>
@@ -253,10 +251,10 @@
                 <!-- Human Side -->
                 <div class="glass-card p-8 rounded-2xl relative" data-aos="fade-left">
                     <div class="flex items-center mb-8">
-                        <div class="w-12 h-12 bg-gray-600 rounded-xl flex items-center justify-center mr-4">
-                            <i class="fas fa-user text-xl"></i>
+                        <div class="w-12 h-12 bg-gray-500 rounded-xl flex items-center justify-center mr-4 shadow-md">
+                            <i class="fas fa-user text-xl text-white"></i>
                         </div>
-                        <h3 class="text-2xl font-bold font-display">Обычные сотрудники</h3>
+                        <h3 class="text-2xl font-bold font-display text-gray-700">Обычные сотрудники</h3>
                     </div>
                     
                     <ul class="space-y-6">
@@ -264,39 +262,39 @@
                             <svg class="w-6 h-6 text-red-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
-                            <span class="ml-3">Высокие зарплаты и социальные взносы</span>
+                            <span class="ml-3 text-gray-700">Высокие зарплаты и социальные взносы</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-6 h-6 text-red-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
-                            <span class="ml-3">Нужно время на изучение специфики бизнеса</span>
+                            <span class="ml-3 text-gray-700">Нужно время на изучение специфики бизнеса</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-6 h-6 text-red-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
-                            <span class="ml-3">Могут болеть, уходить в отпуск или увольняться</span>
+                            <span class="ml-3 text-gray-700">Могут болеть, уходить в отпуск или увольняться</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-6 h-6 text-red-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
-                            <span class="ml-3">Ограниченная экспертиза в разных областях</span>
+                            <span class="ml-3 text-gray-700">Ограниченная экспертиза в разных областях</span>
                         </li>
                         <li class="flex items-start">
                             <svg class="w-6 h-6 text-red-400 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
-                            <span class="ml-3">Человеческий фактор и субъективность</span>
+                            <span class="ml-3 text-gray-700">Человеческий фактор и субъективность</span>
                         </li>
                     </ul>
                 </div>
 
                 <!-- VS Circle -->
                 <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                    <div class="bg-white/10 backdrop-blur-lg rounded-full p-6 shadow-lg">
-                        <span class="text-2xl font-bold font-display">VS</span>
+                    <div class="bg-gradient-card backdrop-blur-lg rounded-full p-6 shadow-lg border border-green-200">
+                        <span class="text-2xl font-bold font-display text-gray-800">VS</span>
                     </div>
                     <div class="connect-lines"></div>
                 </div>
@@ -306,16 +304,16 @@
     <!-- How It Works Section -->
     <section id="how-it-works" class="relative py-20 section-gradient-purple">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-20 font-display" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-20 font-display text-gray-700" data-aos="fade-up">
                 Как работает ИИ-помощник для бизнеса
             </h2>
 
             <div class="grid md:grid-cols-3 gap-8 relative">
                 <!-- Step 1 -->
                 <div class="glass-card p-8 rounded-2xl relative" data-aos="fade-up">
-                    <div class="w-12 h-12 bg-primary-accent rounded-full flex items-center justify-center text-xl font-bold mb-6">1</div>
-                    <h3 class="text-xl font-bold mb-4">Опишите задачу</h3>
-                    <p class="text-gray-300">
+                    <div class="w-12 h-12 bg-primary-accent rounded-full flex items-center justify-center text-xl font-bold mb-6 text-white">1</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-700">Опишите задачу</h3>
+                    <p class="text-gray-600">
                         Расскажите, что нужно сделать: создать лендинг, подготовить документы, рассчитать бюджет. Просто обычными словами.
                     </p>
                     
@@ -326,22 +324,22 @@
 
                 <!-- Step 2 -->
                 <div class="glass-card p-8 rounded-2xl relative" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-12 h-12 bg-primary-medium rounded-full flex items-center justify-center text-xl font-bold mb-6">2</div>
-                    <h3 class="text-xl font-bold mb-4">ИИ анализирует</h3>
-                    <p class="text-gray-300">
+                    <div class="w-12 h-12 bg-primary-accent rounded-full flex items-center justify-center text-xl font-bold mb-6 text-white">2</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-700">ИИ анализирует</h3>
+                    <p class="text-gray-600">
                         Система изучит ваш бизнес, подберет оптимальное решение и учтет все необходимые детали для качественного результата.
                     </p>
                     
                     <div class="absolute -right-4 top-1/2 transform translate-x-full -translate-y-1/2 hidden md:block z-10">
-                        <div class="w-8 h-0.5 bg-gradient-to-r from-primary-medium to-transparent"></div>
+                        <div class="w-8 h-0.5 bg-gradient-to-r from-primary-accent to-transparent"></div>
                     </div>
                 </div>
 
                 <!-- Step 3 -->
                 <div class="glass-card p-8 rounded-2xl relative" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-12 h-12 bg-primary-transition rounded-full flex items-center justify-center text-xl font-bold mb-6">3</div>
-                    <h3 class="text-xl font-bold mb-4">Получите результат</h3>
-                    <p class="text-gray-300">
+                    <div class="w-12 h-12 bg-primary-accent rounded-full flex items-center justify-center text-xl font-bold mb-6 text-white">3</div>
+                    <h3 class="text-xl font-bold mb-4 text-gray-700">Получите результат</h3>
+                    <p class="text-gray-600">
                         За считанные минуты получите готовое решение: документы, макеты, тексты, расчёты — всё готово к использованию.
                     </p>
                 </div>
@@ -362,29 +360,31 @@
 
                         <div class="space-y-6 mb-6">
                             <div class="flex items-start space-x-3">
-                                <div class="w-8 h-8 bg-gray-700 rounded-full flex-shrink-0"></div>
-                                <div class="bg-gray-700 p-4 rounded-2xl rounded-tl-none max-w-md">
-                                    <p class="text-sm">Нужно создать лендинг для нашего кафе. У нас домашняя кухня, уютная атмосфера, работаем с 8:00 до 22:00. Основные блюда - завтраки и обеды.</p>
+                                <div class="w-8 h-8 bg-white rounded-full flex-shrink-0 flex items-center justify-center">
+                                    <i class="fas fa-user text-gray-600"></i>
+                                </div>
+                                <div class="bg-white border border-gray-200 p-4 rounded-2xl rounded-tl-none max-w-md">
+                                    <p class="text-sm text-gray-800">Нужно создать лендинг для нашего кафе. У нас домашняя кухня, уютная атмосфера, работаем с 8:00 до 22:00. Основные блюда - завтраки и обеды.</p>
                                 </div>
                             </div>
 
                             <div class="flex items-start space-x-3 justify-end">
                                 <div class="bg-primary-accent p-4 rounded-2xl rounded-tr-none max-w-md">
-                                    <p class="text-sm mb-3">Отлично! Создам лендинг для вашего кафе:</p>
-                                    <ul class="text-sm space-y-2 list-disc pl-4">
+                                    <p class="text-sm mb-3 text-white">Отлично! Создам лендинг для вашего кафе:</p>
+                                    <ul class="text-sm space-y-2 list-disc pl-4 text-white">
                                         <li>Уютный дизайн с тёплыми цветами</li>
                                         <li>Блок с меню завтраков и обедов</li>
                                         <li>Информация о времени работы</li>
                                         <li>Форма бронирования столиков</li>
                                         <li>Галерея атмосферы заведения</li>
                                     </ul>
-                                    <div class="mt-3 text-xs flex items-center">
+                                    <div class="mt-3 text-xs flex items-center text-white">
                                         <i class="fas fa-clock mr-2"></i>
                                         <span>Готово за 5 минут</span>
                                     </div>
                                 </div>
                                 <div class="w-8 h-8 bg-primary-accent rounded-full flex items-center justify-center flex-shrink-0">
-                                    <i class="fas fa-robot text-sm"></i>
+                                    <i class="fas fa-robot text-sm text-white"></i>
                                 </div>
                             </div>
                         </div>
@@ -392,9 +392,9 @@
                         <div class="relative">
                             <input type="text" 
                                    placeholder="Опишите вашу бизнес-задачу..." 
-                                   class="w-full bg-gray-700 rounded-lg py-3 px-4 pr-12 focus:outline-none focus:ring-2 focus:ring-primary-accent">
-                            <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary-accent p-2 rounded-full hover:bg-primary-transition transition">
-                                <i class="fas fa-paper-plane"></i>
+                                   class="w-full bg-white border border-gray-200 rounded-lg py-3 px-4 pr-12 focus:outline-none focus:ring-2 focus:ring-primary-accent text-gray-800">
+                            <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary-accent w-8 h-8 rounded-full hover:bg-primary-transition transition flex items-center justify-center">
+                                <i class="fas fa-paper-plane text-white text-sm"></i>
                             </button>
                         </div>
                     </div>
@@ -403,11 +403,11 @@
                         <div class="glass-card p-6 rounded-xl hover:scale-105 transition-all duration-300">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-primary-transition rounded-xl flex items-center justify-center">
-                                    <i class="fas fa-brain text-xl"></i>
+                                    <i class="fas fa-brain text-xl text-white"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-lg font-bold mb-1">Умное понимание</h3>
-                                    <p class="text-sm text-gray-400">ИИ учитывает специфику вашего бизнеса</p>
+                                    <h3 class="text-lg font-bold mb-1 text-gray-700">Умное понимание</h3>
+                                    <p class="text-sm text-gray-600">ИИ учитывает специфику вашего бизнеса</p>
                                 </div>
                             </div>
                         </div>
@@ -415,23 +415,23 @@
                         <div class="glass-card p-6 rounded-xl hover:scale-105 transition-all duration-300">
                             <div class="flex items-center space-x-4">
                                 <div class="w-12 h-12 bg-primary-accent rounded-xl flex items-center justify-center">
-                                    <i class="fas fa-rocket text-xl"></i>
+                                    <i class="fas fa-rocket text-xl text-white"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-lg font-bold mb-1">Быстрое выполнение</h3>
-                                    <p class="text-sm text-gray-400">Любые задачи за считанные минуты</p>
+                                    <h3 class="text-lg font-bold mb-1 text-gray-700">Быстрое выполнение</h3>
+                                    <p class="text-sm text-gray-600">Любые задачи за считанные минуты</p>
                                 </div>
                             </div>
                         </div>
 
                         <div class="glass-card p-6 rounded-xl hover:scale-105 transition-all duration-300">
                             <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-primary-medium rounded-xl flex items-center justify-center">
-                                    <i class="fas fa-star text-xl"></i>
+                                <div class="w-12 h-12 bg-primary-accent rounded-xl flex items-center justify-center">
+                                    <i class="fas fa-trophy text-xl text-white"></i>
                                 </div>
                                 <div>
-                                    <h3 class="text-lg font-bold mb-1">Профессиональное качество</h3>
-                                    <p class="text-sm text-gray-400">Результат как от команды экспертов</p>
+                                    <h3 class="text-lg font-bold mb-1 text-gray-700">Профессиональное качество</h3>
+                                    <p class="text-sm text-gray-600">Результат как от команды экспертов</p>
                                 </div>
                             </div>
                         </div>
@@ -442,12 +442,12 @@
     </section>
     <!-- Comparison Section -->
     <section class="relative py-20 section-gradient-blue section-transition">
-        <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-primary-dark to-transparent pointer-events-none"></div>
+        <div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-white to-transparent pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <h2 class="text-3xl font-bold text-center mb-4 font-display" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-4 font-display text-gray-800" data-aos="fade-up">
                 Заменяет целую команду специалистов
             </h2>
-            <p class="text-xl text-center text-gray-300 mb-20 max-w-3xl mx-auto" data-aos="fade-up">
+            <p class="text-xl text-center text-gray-600 mb-20 max-w-3xl mx-auto" data-aos="fade-up">
                 Один ИИ-агент выполняет работу дизайнера, копирайтера, маркетолога, бухгалтера и SMM-специалиста
             </p>
 
@@ -456,56 +456,56 @@
                 <div class="space-y-8" data-aos="fade-right">
                     <!-- Экономия -->
                     <div class="glass-card p-8 rounded-2xl relative overflow-hidden">
-                        <h3 class="text-2xl font-bold mb-6">Экономия на зарплатах в месяц</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Экономия на зарплатах в месяц</h3>
                         <div class="space-y-4">
                             <!-- Специалисты -->
                             <div class="space-y-3 mb-6">
                                 <div class="flex justify-between items-center">
-                                    <span class="text-sm">Веб-дизайнер</span>
-                                    <span class="text-sm text-gray-300">80 000₽</span>
+                                    <span class="text-sm text-gray-700">Веб-дизайнер</span>
+                                    <span class="text-sm text-gray-600">80 000₽</span>
                                 </div>
-                                <div class="h-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full mb-4" style="width: 23%"></div>
+                                <div class="h-2 bg-gradient-to-r from-green-400 to-green-500 rounded-full mb-4" style="width: 23%"></div>
                                 
                                 <div class="flex justify-between items-center">
-                                    <span class="text-sm">Копирайтер</span>
-                                    <span class="text-sm text-gray-300">60 000₽</span>
+                                    <span class="text-sm text-gray-700">Копирайтер</span>
+                                    <span class="text-sm text-gray-600">60 000₽</span>
                                 </div>
-                                <div class="h-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full mb-4" style="width: 17%"></div>
+                                <div class="h-2 bg-gradient-to-r from-green-400 to-green-500 rounded-full mb-4" style="width: 17%"></div>
                                 
                                 <div class="flex justify-between items-center">
-                                    <span class="text-sm">SMM-специалист</span>
-                                    <span class="text-sm text-gray-300">70 000₽</span>
+                                    <span class="text-sm text-gray-700">SMM-специалист</span>
+                                    <span class="text-sm text-gray-600">70 000₽</span>
                                 </div>
-                                <div class="h-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full mb-4" style="width: 20%"></div>
+                                <div class="h-2 bg-gradient-to-r from-green-400 to-green-500 rounded-full mb-4" style="width: 20%"></div>
                                 
                                 <div class="flex justify-between items-center">
-                                    <span class="text-sm">Маркетолог</span>
-                                    <span class="text-sm text-gray-300">90 000₽</span>
+                                    <span class="text-sm text-gray-700">Маркетолог</span>
+                                    <span class="text-sm text-gray-600">90 000₽</span>
                                 </div>
-                                <div class="h-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full mb-4" style="width: 26%"></div>
+                                <div class="h-2 bg-gradient-to-r from-green-400 to-green-500 rounded-full mb-4" style="width: 26%"></div>
                                 
                                 <div class="flex justify-between items-center">
-                                    <span class="text-sm">Бухгалтер</span>
-                                    <span class="text-sm text-gray-300">50 000₽</span>
+                                    <span class="text-sm text-gray-700">Бухгалтер</span>
+                                    <span class="text-sm text-gray-600">50 000₽</span>
                                 </div>
-                                <div class="h-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full mb-4" style="width: 14%"></div>
+                                <div class="h-2 bg-gradient-to-r from-green-400 to-green-500 rounded-full mb-4" style="width: 14%"></div>
                                 
-                                <hr class="border-gray-600">
+                                <hr class="border-gray-400">
                                 <div class="flex justify-between items-center font-semibold">
-                                    <span class="text-base">Всего команда</span>
-                                    <span class="text-base text-gray-300">350 000₽</span>
+                                    <span class="text-base text-gray-800">Всего команда</span>
+                                    <span class="text-base text-gray-600">350 000₽</span>
                                 </div>
-                                <div class="h-2 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full mb-4" style="width: 100%"></div>
+                                <div class="h-2 bg-gradient-to-r from-green-400 to-green-500 rounded-full mb-4" style="width: 100%"></div>
                             </div>
                             
-                            <div class="relative pt-1 bg-primary-dark/50 rounded-xl p-4 border border-primary-accent/30">
+                            <div class="relative pt-1 bg-gradient-card rounded-xl p-4 border border-primary-accent/30">
                                 <div class="flex justify-between items-center mb-2">
-                                    <div class="text-lg font-bold text-white">Мой Ассистент</div>
+                                    <div class="text-lg font-bold text-gray-800">Мой Ассистент</div>
                                     <div class="text-lg font-bold text-primary-accent">2 990₽</div>
                                 </div>
                                 <div class="h-3 bg-gradient-to-r from-primary-accent to-primary-transition rounded-full mb-4 animate-pulse" style="width: 0.85%"></div>
                                 
-                                <div class="text-sm text-gray-300 italic mt-4">
+                                <div class="text-sm text-gray-600 italic mt-4">
                                     * Экономия составляет 99% от стоимости штатных сотрудников
                                 </div>
                             </div>
@@ -514,25 +514,25 @@
 
                     <!-- Преимущества -->
                     <div class="glass-card p-8 rounded-2xl relative overflow-hidden">
-                        <h3 class="text-2xl font-bold mb-6">Главные преимущества</h3>
+                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Главные преимущества</h3>
                         <ul class="space-y-4">
                             <li class="flex items-start">
                                 <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
-                                <span class="ml-3">Всё в одном месте - не нужно искать разных исполнителей</span>
+                                <span class="ml-3 text-gray-700">Всё в одном месте - не нужно искать разных исполнителей</span>
                             </li>
                             <li class="flex items-start">
                                 <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
-                                <span class="ml-3">Понимает специфику именно вашего бизнеса</span>
+                                <span class="ml-3 text-gray-700">Понимает специфику именно вашего бизнеса</span>
                             </li>
                             <li class="flex items-start">
                                 <svg class="w-6 h-6 text-primary-accent mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                                 </svg>
-                                <span class="ml-3">Консистентное качество и быстрое выполнение</span>
+                                <span class="ml-3 text-gray-700">Консистентное качество и быстрое выполнение</span>
                             </li>
                         </ul>
                     </div>
@@ -557,42 +557,42 @@
     <!-- Pricing Section -->
     <section id="pricing" class="relative py-20 section-gradient-blue">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-4 font-display" data-aos="fade-up">
+            <h2 class="text-3xl font-bold text-center mb-4 font-display text-gray-800" data-aos="fade-up">
                 Тарифные планы
             </h2>
-            <p class="text-gray-300 text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+            <p class="text-gray-600 text-center mb-16 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
                 Выберите оптимальный тариф для автоматизации вашего бизнеса с помощью ИИ-технологий
             </p>
-            <div class="bg-primary-accent/20 border border-primary-accent text-primary-dark rounded-xl px-6 py-4 text-center mb-8 font-medium shadow-md max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">
+            <div class="bg-primary-accent/20 border border-primary-accent text-gray-800 rounded-xl px-6 py-4 text-center mb-8 font-medium shadow-md max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">
                 <span>Первые 3 дня бесплатно для всех новых пользователей!</span>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 items-stretch">
     <!-- Starter Plan -->
     <div class="glass-card p-8 rounded-2xl relative hover:scale-105 transition-all duration-300 flex flex-col h-full" data-aos="fade-up">
-        <h3 class="text-xl font-bold mb-4">Стартер</h3>
+        <h3 class="text-xl font-bold mb-4 text-gray-800">Базовый</h3>
         <div class="flex items-baseline mb-8">
-            <span class="text-4xl font-bold">1 490₽</span>
-            <span class="text-gray-400 ml-2">/месяц</span>
+            <span class="text-4xl font-bold text-gray-800">0₽</span>
+            <span class="text-gray-600 ml-2">/месяц</span>
         </div>
         <ul class="space-y-4 mb-8">
             <li class="flex items-center">
                 <svg class="w-5 h-5 text-primary-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                <span>50 задач в месяц</span>
+                <span class="text-gray-700">50 задач в месяц</span>
             </li>
             <li class="flex items-center">
                 <svg class="w-5 h-5 text-primary-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                <span>Создание лендингов и визиток</span>
+                <span class="text-gray-700">Создание лендингов и визиток</span>
             </li>
             <li class="flex items-center">
                 <svg class="w-5 h-5 text-primary-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
                 </svg>
-                <span>Посты для соцсетей</span>
+                <span class="text-gray-700">Посты для соцсетей</span>
             </li>
             <li class="flex items-center">
                 <svg class="w-5 h-5 text-primary-accent mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -659,7 +659,7 @@
                 <h2 class="text-3xl font-bold mb-4 font-display" data-aos="fade-up">
                     Что говорят наши <span class="gradient-text">клиенты</span>
                 </h2>
-                <p class="text-xl text-gray-300 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                <p class="text-xl text-gray-700 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
                     Более 1000 предпринимателей уже автоматизировали свой бизнес с помощью нашего ИИ-ассистента
                 </p>
             </div>
@@ -670,7 +670,7 @@
                     <!-- Основная карточка на переднем плане -->
                     <div class="slider-card slider-primary active" data-position="center">
                         <div class="slider-icon">
-                            <i class="fas fa-star"></i>
+                            <img src="static/images/woman-1.png" alt="Анна Смирнова" class="w-16 h-16 rounded-full object-cover" />
                         </div>
                         <h3>Анна Смирнова</h3>
                         <p class="text-gray-300 leading-relaxed italic">
@@ -683,7 +683,7 @@
                     <!-- Вторичные карточки (позади слева и справа) -->
                     <div class="slider-card slider-secondary" data-position="left">
                         <div class="slider-icon">
-                            <i class="fas fa-star"></i>
+                            <img src="static/images/man-1.png" alt="Михаил Петров" class="w-16 h-16 rounded-full object-cover" />
                         </div>
                         <h3>Михаил Петров</h3>
                         <p class="text-gray-300 leading-relaxed italic">
@@ -695,20 +695,20 @@
                     
                     <div class="slider-card slider-secondary" data-position="right">
                         <div class="slider-icon">
-                            <i class="fas fa-star"></i>
+                            <img src="static/images/woman-2.png" alt="Елена Козлова" class="w-16 h-16 rounded-full object-cover" />
                         </div>
                         <h3>Елена Козлова</h3>
                         <p class="text-gray-300 leading-relaxed italic">
                             "Создание контента для соцсетей теперь занимает считанные минуты. ИИ подбирает идеальные хештеги и пишет продающие тексты!"
                         </p>
                         <div class="mt-4 text-yellow-400">⭐⭐⭐⭐⭐</div>
-                        <div class="text-sm text-gray-400 mt-2">Маркетолог</div>
+                        <div class="text-sm text-gray-400 mt-2">Индивидуальный диетолог</div>
                     </div>
                     
                     <!-- Дополнительные карточки для карусели (скрыты изначально) -->
                     <div class="slider-card slider-hidden" data-position="hidden">
                         <div class="slider-icon">
-                            <i class="fas fa-star"></i>
+                            <img src="static/images/man-2.png" alt="Алексей Иванов" class="w-16 h-16 rounded-full object-cover" />
                         </div>
                         <h3>Алексей Иванов</h3>
                         <p class="text-gray-300 leading-relaxed italic">
@@ -720,7 +720,7 @@
                     
                     <div class="slider-card slider-hidden" data-position="hidden">
                         <div class="slider-icon">
-                            <i class="fas fa-star"></i>
+                            <img src="static/images/woman-3.png" alt="Ольга Соколова" class="w-16 h-16 rounded-full object-cover" />
                         </div>
                         <h3>Ольга Соколова</h3>
                         <p class="text-gray-300 leading-relaxed italic">
@@ -754,7 +754,7 @@
                 <h2 class="text-3xl font-bold mb-6 font-display" data-aos="fade-up">
                     Начните автоматизировать бизнес-задачи прямо сейчас
                 </h2>
-                <p class="text-xl text-gray-200 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                <p class="text-xl text-gray-700 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
                     Доступ к ИИ-помощнику для создания лендингов, подготовки документов и автоматизации рутинных задач
                 </p>
                 <div class="flex flex-wrap justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
@@ -788,12 +788,11 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 py-16 border-t border-gray-800">
+    <footer class="py-16 border-t" style="background-color: #1f2937; border-color: #38c96a;">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-12">
                 <div>
                     <div class="flex items-center mb-2">
-    <img src="static/images/logo.png" alt="Логотип Мой Ассистент" class="h-10 w-auto object-contain mr-4" loading="lazy" />
     <span class="text-2xl font-bold gradient-text font-display">Мой Ассистент</span>
 </div>
 <p class="text-gray-400 mb-6 mt-2">
@@ -814,7 +813,7 @@
                 </div>
 
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Продукт</h4>
+                    <h4 class="text-lg font-semibold mb-6 text-white">Продукт</h4>
                     <ul class="space-y-4">
                         <li><a href="#services" class="text-gray-400 hover:text-white transition">Услуги</a></li>
                         <li><a href="#pricing" class="text-gray-400 hover:text-white transition">Тарифы</a></li>
@@ -824,7 +823,7 @@
                 </div>
 
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Поддержка</h4>
+                    <h4 class="text-lg font-semibold mb-6 text-white">Поддержка</h4>
                     <ul class="space-y-4">
                         <li><a href="#" class="text-gray-400 hover:text-white transition">Руководства</a></li>
                         <li><a href="#" class="text-gray-400 hover:text-white transition">Примеры</a></li>
@@ -834,38 +833,38 @@
                 </div>
 
                 <div>
-                    <h4 class="text-lg font-semibold mb-6">Контакты</h4>
+                    <h4 class="text-lg font-semibold mb-6 text-white">Контакты</h4>
                     <div class="space-y-4">
                         <div class="company-info-group">
                             <p class="text-gray-400">
-                                <span class="company-info-label">ООО "БизнесАссистент"</span><br>
-                                115114, г. Москва,<br>
-                                ул. Деловая, д. 15, офис 42
+                                <span class="company-info-label">ООО "ЦФУ"</span><br>
+                                690048, Приморский край, г. Владивосток,<br>
+                                ул. Волховская, д. 25, помещ.5
                             </p>
                         </div>
                         <div class="company-info-group">
                             <p class="text-gray-400">
-                                <span class="company-info-label">Генеральный директор:</span><br>
-                                Петров Алексей Сергеевич
+                                <span class="company-info-label">Управляющий:</span><br>
+                                Репчинская Марина Валерьевна
                             </p>
                         </div>
                         <div class="company-info-group">
-                            <a href="tel:+74951234567" class="text-gray-400 hover:text-white transition flex items-center">
+                            <a href="tel:+79344773280" class="text-gray-400 hover:text-white transition flex items-center">
                                 <i class="fas fa-phone mr-2"></i>
-                                +7 (495) 123-45-67
+                                +7 (934) 477-32-80
                             </a>
                         </div>
                         <div class="company-info-group">
-                            <a href="mailto:info@assistant.pro" class="text-gray-400 hover:text-white transition flex items-center">
+                            <a href="mailto:consult@cfunalog.ru" class="text-gray-400 hover:text-white transition flex items-center">
                                 <i class="fas fa-envelope mr-2"></i>
-                                info@assistant.pro
+                                consult@cfunalog.ru
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="border-t border-gray-800 mt-12 pt-8">
+            <div class="border-t mt-12 pt-8" style="border-color: #38c96a;">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-gray-400 text-sm">© 2025 Мой Ассистент. Все права защищены.</p>
                     <div class="company-info text-sm mt-8 md:mt-0">
