@@ -298,7 +298,153 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+/**
+ * Инициализация интерактивных табов для секции экономии времени
+ */
+function initTimeTabs() {
+    const tabButtons = document.querySelectorAll('.time-tab-btn');
+    const tabContents = document.querySelectorAll('.time-tab-content');
+    let autoSwitchInterval;
+    let currentTabIndex = 0;
+    const autoSwitchDelay = 8000; // 8 секунд
+
+    if (!tabButtons.length || !tabContents.length) return;
+
+    /**
+     * Переключает на указанную вкладку
+     */
+    function switchTab(targetTab, tabIndex = null) {
+        // Удаляем активные классы у всех кнопок и контента
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => {
+            content.classList.remove('active', 'fade-in');
+        });
+
+        // Находим соответствующие элементы
+        const targetButton = document.querySelector(`[data-tab="${targetTab}"]`);
+        const targetContent = document.getElementById(`tab-${targetTab}`);
+
+        if (targetButton && targetContent) {
+            // Активируем нужную кнопку и контент
+            targetButton.classList.add('active');
+            
+            setTimeout(() => {
+                targetContent.classList.add('active', 'fade-in');
+            }, 100);
+
+            // Обновляем текущий индекс
+            if (tabIndex !== null) {
+                currentTabIndex = tabIndex;
+            }
+        }
+    }
+
+    /**
+     * Переключает на следующую вкладку автоматически
+     */
+    function autoSwitchNext() {
+        const tabs = ['landing', 'documents', 'content', 'design', 'social', 'budget'];
+        currentTabIndex = (currentTabIndex + 1) % tabs.length;
+        switchTab(tabs[currentTabIndex], currentTabIndex);
+    }
+
+    /**
+     * Запускает автоматическое переключение
+     */
+    function startAutoSwitch() {
+        stopAutoSwitch();
+        autoSwitchInterval = setInterval(autoSwitchNext, autoSwitchDelay);
+    }
+
+    /**
+     * Останавливает автоматическое переключение
+     */
+    function stopAutoSwitch() {
+        clearInterval(autoSwitchInterval);
+    }
+
+    // Добавляем обработчики клика для каждой кнопки
+    tabButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            const targetTab = button.getAttribute('data-tab');
+            switchTab(targetTab, index);
+            
+            // Перезапускаем автопереключение
+            stopAutoSwitch();
+            setTimeout(startAutoSwitch, autoSwitchDelay); // Даём пользователю время прочитать
+        });
+
+        // Останавливаем автопереключение при наведении
+        button.addEventListener('mouseenter', stopAutoSwitch);
+        button.addEventListener('mouseleave', () => {
+            setTimeout(startAutoSwitch, 2000); // Перезапускаем через 2 секунды
+        });
+    });
+
+    // Останавливаем автопереключение при наведении на контент
+    tabContents.forEach(content => {
+        content.addEventListener('mouseenter', stopAutoSwitch);
+        content.addEventListener('mouseleave', () => {
+            setTimeout(startAutoSwitch, 2000);
+        });
+    });
+
+    // Инициализация: показываем первую вкладку и запускаем автопереключение
+    switchTab('landing', 0);
+    startAutoSwitch();
+
+    // Останавливаем автопереключение при прокрутке в секции
+    const timeSection = document.querySelector('#time-tabs').closest('section');
+    if (timeSection) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    startAutoSwitch();
+                } else {
+                    stopAutoSwitch();
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        observer.observe(timeSection);
+    }
+
+    // Поддержка свайпов для мобильных устройств
+    const tabContainer = document.querySelector('.lg\\:grid-cols-2');
+    if (tabContainer) {
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        tabContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        tabContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                // Свайп влево - следующая вкладка
+                autoSwitchNext();
+                stopAutoSwitch();
+                setTimeout(startAutoSwitch, autoSwitchDelay);
+            } else if (touchEndX > touchStartX + swipeThreshold) {
+                // Свайп вправо - предыдущая вкладка
+                const tabs = ['landing', 'documents', 'content', 'design', 'social', 'budget'];
+                currentTabIndex = (currentTabIndex - 1 + tabs.length) % tabs.length;
+                switchTab(tabs[currentTabIndex], currentTabIndex);
+                stopAutoSwitch();
+                setTimeout(startAutoSwitch, autoSwitchDelay);
+            }
+        }
+    }
+}
+
 // Initialize all sliders when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     init3DSlider();
+    initTimeTabs();
 });

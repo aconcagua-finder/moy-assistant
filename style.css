@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
 html, body {
     overflow-x: hidden;
@@ -42,7 +41,7 @@ html, body {
 }
 
 body {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background: var(--gradient-light-green);
     color: var(--text-primary);
     line-height: 1.6;
@@ -178,7 +177,8 @@ body {
 .heading-xl {
     font-size: clamp(3rem, 5vw, 4rem); /* увеличенный размер шрифта для Карманный консультант */
     line-height: 1.1;
-    font-family: 'Unbounded', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
 
 .hero-subtitle {
@@ -675,7 +675,7 @@ section {
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--text-primary);
-    font-family: 'Unbounded', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .slider-card p {
@@ -880,5 +880,254 @@ section {
     .testimonial-slide {
         min-width: 33.333% !important;
         width: 33.333% !important;
+    }
+}
+
+/* Стили для кнопок с белым текстом */
+.registration-btn,
+button.registration-btn {
+    color: white !important;
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    word-break: keep-all !important;
+    white-space: nowrap !important;
+    text-wrap: nowrap !important;
+}
+
+/* Убедимся, что все кнопки с зеленым фоном имеют белый текст */
+.bg-primary-accent,
+.bg-primary-transition,
+[class*="bg-primary-accent"]:not(.border),
+button[class*="bg-primary-accent"],
+a[class*="bg-primary-accent"] {
+    color: white !important;
+}
+
+/* Фикс для ссылок внутри зеленых кнопок */
+.bg-primary-accent a,
+.bg-primary-transition a {
+    color: white !important;
+}
+
+/* Стили для hover состояний */
+.hover\:bg-primary-accent:hover,
+.hover\:bg-primary-transition:hover {
+    color: white !important;
+}
+
+/* Исключение для блоков со скоростью - они должны иметь темный текст */
+.inline-flex.items-center[class*="bg-primary-accent/10"] {
+    color: inherit !important;
+}
+
+.inline-flex.items-center[class*="bg-primary-accent/10"] * {
+    color: inherit !important;
+}
+
+/* Исключение для кнопок с прозрачным фоном - они должны иметь темный текст */
+button.registration-btn.bg-transparent,
+button.registration-btn[class*="bg-white"] {
+    color: #374151 !important;
+}
+
+button.registration-btn.bg-transparent:not(:hover),
+button.registration-btn[class*="bg-white"]:not(:hover) {
+    color: #374151 !important;
+}
+
+/* Универсальные стили для заголовков с Montserrat */
+h1, h2, h3, h4, h5, h6,
+.font-display {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700;
+}
+
+/* Стили для шапки на больших экранах */
+@media (min-width: 1280px) {
+    nav .max-w-6xl {
+        max-width: 100%;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+@media (min-width: 1536px) {
+    nav .max-w-6xl {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    nav .max-w-6xl {
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+}
+
+/* Стили для контента hero секции на больших экранах */
+@media (min-width: 1280px) {
+    .hero-gradient-bg .max-w-8xl {
+        max-width: 100%;
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+@media (min-width: 1536px) {
+    .hero-gradient-bg .max-w-8xl {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .hero-gradient-bg .max-w-8xl {
+        padding-left: 8rem;
+        padding-right: 8rem;
+    }
+}
+
+/* Стили для интерактивных табов экономии времени */
+.time-tab-btn {
+    background: var(--gradient-card);
+    border-color: rgba(56, 201, 106, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-light);
+}
+
+.time-tab-btn:hover {
+    border-color: rgba(56, 201, 106, 0.3);
+    box-shadow: var(--shadow-medium);
+    background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(248,255,254,0.95) 50%, rgba(240,253,244,0.9) 100%);
+}
+
+.time-tab-btn.active {
+    border-color: var(--accent-green);
+    background: linear-gradient(135deg, rgba(56, 201, 106, 0.05) 0%, rgba(56, 201, 106, 0.02) 50%, rgba(255,255,255,0.95) 100%);
+    box-shadow: var(--shadow-medium), 0 0 20px rgba(56, 201, 106, 0.1);
+}
+
+.time-tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.time-tab-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Автоматическая смена табов - прогресс бар */
+.time-tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-green), var(--accent-green-light));
+    border-radius: 0 0 1rem 1rem;
+    transition: width 0.3s ease;
+}
+
+.time-tab-btn.active::after {
+    width: 100%;
+    animation: tabProgress 8s linear infinite;
+}
+
+@keyframes tabProgress {
+    0% { width: 0%; }
+    95% { width: 100%; }
+    100% { width: 100%; }
+}
+
+/* Адаптивность для табов */
+@media (max-width: 1024px) {
+    .lg\:grid-cols-2 {
+        grid-template-columns: 1fr !important;
+    }
+    
+    .time-tab-btn {
+        margin-bottom: 0.5rem;
+    }
+    
+    .sticky {
+        position: static !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .time-tab-btn {
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .time-tab-btn .w-12 {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    
+    .time-tab-btn h4 {
+        font-size: 1rem;
+    }
+    
+    .time-tab-btn p {
+        font-size: 0.75rem;
+    }
+    
+    .time-tab-content .glass-card {
+        padding: 1.5rem;
+    }
+    
+    .time-tab-content h3 {
+        font-size: 1.5rem;
+    }
+    
+    .time-tab-content .space-y-6 > div {
+        padding: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .time-tab-btn {
+        padding: 0.75rem;
+    }
+    
+    .time-tab-btn .flex.items-center.space-x-4 {
+        gap: 0.75rem;
+    }
+    
+    .time-tab-btn .text-right {
+        text-align: center;
+        min-width: 60px;
+    }
+    
+    .time-tab-content .glass-card {
+        padding: 1rem;
+    }
+    
+    .time-tab-content h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Плавная анимация смены контента */
+.time-tab-content.fade-in {
+    animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }

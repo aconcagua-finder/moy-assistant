@@ -601,7 +601,7 @@
                 Базовые документы
             </li>
         </ul>
-        <button class="registration-btn w-full py-3 px-6 border-2 border-primary-accent bg-white text-primary-accent hover:bg-primary-accent hover:text-white rounded-xl transition-colors text-center font-medium mt-auto" onclick="window.location.href='#'">
+        <button class="registration-btn w-full py-3 px-6 border-2 border-primary-accent bg-white text-gray-700 hover:bg-primary-accent hover:text-white rounded-xl transition-colors text-center font-medium mt-auto" onclick="window.location.href='#'">
             Попробовать бесплатно
         </button>
     </div>
@@ -651,6 +651,516 @@
         </div>
     </section>
 
+    <!-- Time Comparison Section -->
+    <section class="relative py-20 bg-gradient-to-b from-white via-[#f0fdf4] to-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-4 font-display text-gray-800" data-aos="fade-up">
+                Экономьте время на рутинных задачах
+            </h2>
+            <p class="text-xl text-center text-gray-600 mb-16 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Автоматизируйте любые бизнес-процессы с помощью ИИ-ассистента
+            </p>
+
+            <!-- Интерактивные табы -->
+            <div class="grid lg:grid-cols-2 gap-12 items-start" data-aos="fade-up" data-aos-delay="200">
+                <!-- Левая часть: Список задач -->
+                <div class="space-y-4">
+                    <h3 class="text-2xl font-bold mb-8 text-gray-800">Выберите задачу</h3>
+                    <div class="space-y-3" id="time-tabs">
+                        <button class="time-tab-btn active w-full text-left p-4 rounded-2xl border-2 transition-all duration-300 hover:scale-105" data-tab="landing">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-primary-accent rounded-xl flex items-center justify-center text-white">
+                                        <i class="fas fa-globe text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Создание лендинга</h4>
+                                        <p class="text-sm text-gray-600">Современные продающие сайты</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm text-gray-500">Экономия</div>
+                                    <div class="text-lg font-bold text-primary-accent">1000x</div>
+                                </div>
+                            </div>
+                        </button>
+
+                        <button class="time-tab-btn w-full text-left p-4 rounded-2xl border-2 transition-all duration-300 hover:scale-105" data-tab="documents">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-primary-accent rounded-xl flex items-center justify-center text-white">
+                                        <i class="fas fa-file-invoice text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Документы для налоговой</h4>
+                                        <p class="text-sm text-gray-600">Декларации и отчёты</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm text-gray-500">Экономия</div>
+                                    <div class="text-lg font-bold text-primary-accent">200x</div>
+                                </div>
+                            </div>
+                        </button>
+
+                        <button class="time-tab-btn w-full text-left p-4 rounded-2xl border-2 transition-all duration-300 hover:scale-105" data-tab="content">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-primary-accent rounded-xl flex items-center justify-center text-white">
+                                        <i class="fas fa-chart-line text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Контент-стратегия</h4>
+                                        <p class="text-sm text-gray-600">Планирование маркетинга</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm text-gray-500">Экономия</div>
+                                    <div class="text-lg font-bold text-primary-accent">360x</div>
+                                </div>
+                            </div>
+                        </button>
+
+                        <button class="time-tab-btn w-full text-left p-4 rounded-2xl border-2 transition-all duration-300 hover:scale-105" data-tab="design">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-primary-accent rounded-xl flex items-center justify-center text-white">
+                                        <i class="fas fa-palette text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Дизайн и брендинг</h4>
+                                        <p class="text-sm text-gray-600">Визитки, логотипы</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm text-gray-500">Экономия</div>
+                                    <div class="text-lg font-bold text-primary-accent">500x</div>
+                                </div>
+                            </div>
+                        </button>
+
+                        <button class="time-tab-btn w-full text-left p-4 rounded-2xl border-2 transition-all duration-300 hover:scale-105" data-tab="social">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-primary-accent rounded-xl flex items-center justify-center text-white">
+                                        <i class="fas fa-share-alt text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Посты для соцсетей</h4>
+                                        <p class="text-sm text-gray-600">Instagram, VK, Facebook</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm text-gray-500">Экономия</div>
+                                    <div class="text-lg font-bold text-primary-accent">90x</div>
+                                </div>
+                            </div>
+                        </button>
+
+                        <button class="time-tab-btn w-full text-left p-4 rounded-2xl border-2 transition-all duration-300 hover:scale-105" data-tab="budget">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center space-x-4">
+                                    <div class="w-12 h-12 bg-primary-accent rounded-xl flex items-center justify-center text-white">
+                                        <i class="fas fa-calculator text-lg"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-semibold text-gray-800">Расчёт бюджета</h4>
+                                        <p class="text-sm text-gray-600">Финансовое планирование</p>
+                                    </div>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-sm text-gray-500">Экономия</div>
+                                    <div class="text-lg font-bold text-primary-accent">150x</div>
+                                </div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Правая часть: Детальная информация -->
+                <div class="sticky top-8">
+                    <!-- Контент для лендинга -->
+                    <div class="time-tab-content active" id="tab-landing">
+                        <div class="glass-card p-8 rounded-3xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-accent/10 to-transparent rounded-full -mr-16 -mt-16"></div>
+                            <div class="relative">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-primary-accent rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                                        <i class="fas fa-globe text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-800">Создание лендинга</h3>
+                                        <p class="text-gray-600">Профессиональные продающие сайты</p>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-6 mb-8">
+                                    <div class="flex items-center justify-between p-4 bg-red-50 rounded-xl border-l-4 border-red-400">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-user-tie text-red-500 mr-3 text-lg"></i>
+                                            <div>
+                                                <span class="font-semibold text-gray-700">Обычный способ</span>
+                                                <p class="text-sm text-gray-600">Найм дизайнера + программиста</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-2xl font-bold text-red-600">5-7 дней</span>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-robot text-green-600 mr-3 text-lg"></i>
+                                            <div>
+                                                <span class="font-semibold text-gray-700">Мой Ассистент</span>
+                                                <p class="text-sm text-gray-600">Автоматическое создание</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-2xl font-bold text-green-600">10 минут</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-gradient-to-r from-primary-accent/5 to-transparent p-6 rounded-xl mb-6">
+                                    <h4 class="font-bold text-gray-800 mb-3">Что включено:</h4>
+                                    <ul class="space-y-2 text-gray-700">
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Адаптивный дизайн под все устройства</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Продающие тексты с учётом психологии</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Интеграция с формами обратной связи</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> SEO-оптимизация из коробки</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="inline-flex items-center bg-primary-accent/10 text-gray-700 px-6 py-3 rounded-full font-bold text-lg">
+                                        <i class="fas fa-rocket mr-3 text-primary-accent"></i>
+                                        Быстрее в 1000 раз
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Остальные табы (скрыты по умолчанию) -->
+                    <div class="time-tab-content" id="tab-documents">
+                        <div class="glass-card p-8 rounded-3xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-accent/10 to-transparent rounded-full -mr-16 -mt-16"></div>
+                            <div class="relative">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-primary-accent rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                                        <i class="fas fa-file-invoice text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-800">Документы для налоговой</h3>
+                                        <p class="text-gray-600">Автоматическая подготовка отчётности</p>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-6 mb-8">
+                                    <div class="flex items-center justify-between p-4 bg-red-50 rounded-xl border-l-4 border-red-400">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-user-tie text-red-500 mr-3 text-lg"></i>
+                                            <div>
+                                                <span class="font-semibold text-gray-700">Бухгалтер</span>
+                                                <p class="text-sm text-gray-600">Ручное заполнение + проверка</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-2xl font-bold text-red-600">2-3 дня</span>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-robot text-green-600 mr-3 text-lg"></i>
+                                            <div>
+                                                <span class="font-semibold text-gray-700">Мой Ассистент</span>
+                                                <p class="text-sm text-gray-600">Автозаполнение по данным</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-2xl font-bold text-green-600">15 минут</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-gradient-to-r from-primary-accent/5 to-transparent p-6 rounded-xl mb-6">
+                                    <h4 class="font-bold text-gray-800 mb-3">Что включено:</h4>
+                                    <ul class="space-y-2 text-gray-700">
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Декларации по всем налогам (УСН, НДС, налог на прибыль)</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Справки и отчёты для ФНС</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Актуальные формы и требования законодательства</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Автоматическая проверка на ошибки</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="inline-flex items-center bg-primary-accent/10 text-gray-700 px-6 py-3 rounded-full font-bold text-lg">
+                                        <i class="fas fa-clock mr-3 text-primary-accent"></i>
+                                        Быстрее в 200 раз
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Остальные табы аналогично... -->
+                    <div class="time-tab-content" id="tab-content">
+                        <div class="glass-card p-8 rounded-3xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-accent/10 to-transparent rounded-full -mr-16 -mt-16"></div>
+                            <div class="relative">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-primary-accent rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                                        <i class="fas fa-chart-line text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-800">Контент-стратегия</h3>
+                                        <p class="text-gray-600">Планирование маркетингового контента</p>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-6 mb-8">
+                                    <div class="flex items-center justify-between p-4 bg-red-50 rounded-xl border-l-4 border-red-400">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-user-tie text-red-500 mr-3 text-lg"></i>
+                                            <div>
+                                                <span class="font-semibold text-gray-700">Маркетолог</span>
+                                                <p class="text-sm text-gray-600">Исследование + планирование</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-2xl font-bold text-red-600">3-5 дней</span>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-robot text-green-600 mr-3 text-lg"></i>
+                                            <div>
+                                                <span class="font-semibold text-gray-700">Мой Ассистент</span>
+                                                <p class="text-sm text-gray-600">Анализ + автоматическое планирование</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-2xl font-bold text-green-600">20 минут</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-gradient-to-r from-primary-accent/5 to-transparent p-6 rounded-xl mb-6">
+                                    <h4 class="font-bold text-gray-800 mb-3">Что включено:</h4>
+                                    <ul class="space-y-2 text-gray-700">
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Анализ целевой аудитории и конкурентов</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Календарь публикаций на месяц</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Темы постов и ключевые сообщения</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Рекомендации по продвижению</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="inline-flex items-center bg-primary-accent/10 text-gray-700 px-6 py-3 rounded-full font-bold text-lg">
+                                        <i class="fas fa-chart-line mr-3 text-primary-accent"></i>
+                                        Быстрее в 360 раз
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="time-tab-content" id="tab-design">
+                        <div class="glass-card p-8 rounded-3xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-accent/10 to-transparent rounded-full -mr-16 -mt-16"></div>
+                            <div class="relative">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-primary-accent rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                                        <i class="fas fa-palette text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-800">Дизайн и брендинг</h3>
+                                        <p class="text-gray-600">Визитки, логотипы, фирменный стиль</p>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-6 mb-8">
+                                    <div class="flex items-center justify-between p-4 bg-red-50 rounded-xl border-l-4 border-red-400">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-user-tie text-red-500 mr-3 text-lg"></i>
+                                            <div>
+                                                <span class="font-semibold text-gray-700">Дизайнер</span>
+                                                <p class="text-sm text-gray-600">Концепция + исполнение</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-2xl font-bold text-red-600">2-4 дня</span>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-robot text-green-600 mr-3 text-lg"></i>
+                                            <div>
+                                                <span class="font-semibold text-gray-700">Мой Ассистент</span>
+                                                <p class="text-sm text-gray-600">Генерация на основе ТЗ</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-2xl font-bold text-green-600">5 минут</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-gradient-to-r from-primary-accent/5 to-transparent p-6 rounded-xl mb-6">
+                                    <h4 class="font-bold text-gray-800 mb-3">Что включено:</h4>
+                                    <ul class="space-y-2 text-gray-700">
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Логотип в векторном и растровом форматах</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Визитки (готовые к печати макеты)</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Цветовая палитра и руководство по стилю</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Шаблоны для соцсетей и презентаций</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="inline-flex items-center bg-primary-accent/10 text-gray-700 px-6 py-3 rounded-full font-bold text-lg">
+                                        <i class="fas fa-magic mr-3 text-primary-accent"></i>
+                                        Быстрее в 500 раз
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="time-tab-content" id="tab-social">
+                        <div class="glass-card p-8 rounded-3xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-accent/10 to-transparent rounded-full -mr-16 -mt-16"></div>
+                            <div class="relative">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-primary-accent rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                                        <i class="fas fa-share-alt text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-800">Посты для соцсетей</h3>
+                                        <p class="text-gray-600">Instagram, VK, Facebook контент</p>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-6 mb-8">
+                                    <div class="flex items-center justify-between p-4 bg-red-50 rounded-xl border-l-4 border-red-400">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-user-tie text-red-500 mr-3 text-lg"></i>
+                                            <div>
+                                                <span class="font-semibold text-gray-700">SMM-специалист</span>
+                                                <p class="text-sm text-gray-600">Текст + визуал + хештеги</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-2xl font-bold text-red-600">2-3 часа</span>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-robot text-green-600 mr-3 text-lg"></i>
+                                            <div>
+                                                <span class="font-semibold text-gray-700">Мой Ассистент</span>
+                                                <p class="text-sm text-gray-600">Автогенерация контента</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-2xl font-bold text-green-600">2 минуты</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-gradient-to-r from-primary-accent/5 to-transparent p-6 rounded-xl mb-6">
+                                    <h4 class="font-bold text-gray-800 mb-3">Что включено:</h4>
+                                    <ul class="space-y-2 text-gray-700">
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Продающие тексты под целевую аудиторию</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Популярные хештеги для продвижения</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Визуальные концепции и идеи для оформления</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Оптимальное время для публикации</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="inline-flex items-center bg-primary-accent/10 text-gray-700 px-6 py-3 rounded-full font-bold text-lg">
+                                        <i class="fas fa-zap mr-3 text-primary-accent"></i>
+                                        Быстрее в 90 раз
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="time-tab-content" id="tab-budget">
+                        <div class="glass-card p-8 rounded-3xl relative overflow-hidden">
+                            <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-accent/10 to-transparent rounded-full -mr-16 -mt-16"></div>
+                            <div class="relative">
+                                <div class="flex items-center mb-6">
+                                    <div class="w-16 h-16 bg-primary-accent rounded-2xl flex items-center justify-center mr-4 shadow-lg">
+                                        <i class="fas fa-calculator text-2xl text-white"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold text-gray-800">Расчёт бюджета</h3>
+                                        <p class="text-gray-600">Финансовое планирование и анализ</p>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-6 mb-8">
+                                    <div class="flex items-center justify-between p-4 bg-red-50 rounded-xl border-l-4 border-red-400">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-user-tie text-red-500 mr-3 text-lg"></i>
+                                            <div>
+                                                <span class="font-semibold text-gray-700">Финансист</span>
+                                                <p class="text-sm text-gray-600">Анализ + составление отчётов</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-2xl font-bold text-red-600">1-2 дня</span>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-between p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
+                                        <div class="flex items-center">
+                                            <i class="fas fa-robot text-green-600 mr-3 text-lg"></i>
+                                            <div>
+                                                <span class="font-semibold text-gray-700">Мой Ассистент</span>
+                                                <p class="text-sm text-gray-600">Автоматический расчёт</p>
+                                            </div>
+                                        </div>
+                                        <span class="text-2xl font-bold text-green-600">10 минут</span>
+                                    </div>
+                                </div>
+
+                                <div class="bg-gradient-to-r from-primary-accent/5 to-transparent p-6 rounded-xl mb-6">
+                                    <h4 class="font-bold text-gray-800 mb-3">Что включено:</h4>
+                                    <ul class="space-y-2 text-gray-700">
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Планирование доходов и расходов</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Расчёт рентабельности проектов</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Анализ точки безубыточности</li>
+                                        <li class="flex items-center"><i class="fas fa-check text-primary-accent mr-2"></i> Рекомендации по оптимизации затрат</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="text-center">
+                                    <div class="inline-flex items-center bg-primary-accent/10 text-gray-700 px-6 py-3 rounded-full font-bold text-lg">
+                                        <i class="fas fa-trophy mr-3 text-primary-accent"></i>
+                                        Быстрее в 150 раз
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Итоговая статистика -->
+            <div class="mt-20 glass-card p-10 rounded-3xl text-center relative overflow-hidden" data-aos="fade-up">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary-accent/5 via-transparent to-secondary-accent/5"></div>
+                <div class="relative">
+                    <h3 class="text-2xl font-bold mb-8 text-gray-800">Итого экономия времени с Моим Ассистентом</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div>
+                            <div class="text-5xl font-bold gradient-text mb-2">95%</div>
+                            <p class="text-gray-600">Времени на рутинные задачи</p>
+                        </div>
+                        <div>
+                            <div class="text-5xl font-bold gradient-text mb-2">24/7</div>
+                            <p class="text-gray-600">Всегда готов к работе</p>
+                        </div>
+                        <div>
+                            <div class="text-5xl font-bold gradient-text mb-2">∞</div>
+                            <p class="text-gray-600">Задач в месяц с бизнес-планом</p>
+                        </div>
+                    </div>
+                    <div class="mt-10">
+                        <button class="registration-btn inline-flex items-center justify-center px-10 py-4 bg-primary-accent hover:bg-primary-transition text-white rounded-xl font-semibold transition-all transform hover:scale-105 shadow-lg text-lg text-center min-w-max" onclick="window.location.href='#'">
+                            Начать экономить время прямо сейчас
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Testimonials Section -->
     <section class="relative py-20 bg-primary-dark overflow-hidden">
         <div class="absolute inset-0 bg-gradient-to-br from-primary-dark via-primary-medium to-primary-dark opacity-50"></div>
@@ -672,12 +1182,12 @@
                         <div class="slider-icon">
                             <img src="static/images/woman-1.png" alt="Анна Смирнова" class="w-16 h-16 rounded-full object-cover" />
                         </div>
-                        <h3>Анна Смирнова</h3>
-                        <p class="text-gray-300 leading-relaxed italic">
-                            "За 2 дня создал полноценный лендинг для своего кафе, настроил рекламу в соцсетях и подготовил все документы для налоговой. Раньше на это ушло бы несколько недель и куча денег!"
+                        <h3>Анна С.</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            "Честно говоря, сначала скептически отнеслась к ИИ. Но когда за полдня получила готовый лендинг для кафе - была удивлена. Конечно, пришлось немного доработать под себя, но основа была очень хорошая. Сэкономила тысяч 30 точно."
                         </p>
-                        <div class="mt-4 text-yellow-400">⭐⭐⭐⭐⭐</div>
-                        <div class="text-sm text-gray-400 mt-2">Владелец кафе "Утро"</div>
+                        <div class="mt-4 text-yellow-400">⭐⭐⭐⭐</div>
+                        <div class="text-sm text-gray-400 mt-2">Кафе в центре города</div>
                     </div>
                     
                     <!-- Вторичные карточки (позади слева и справа) -->
@@ -685,24 +1195,24 @@
                         <div class="slider-icon">
                             <img src="static/images/man-1.png" alt="Михаил Петров" class="w-16 h-16 rounded-full object-cover" />
                         </div>
-                        <h3>Михаил Петров</h3>
-                        <p class="text-gray-300 leading-relaxed italic">
-                            "ИИ-ассистент помог мне автоматизировать рутинные задачи и сэкономить кучу времени. Теперь я могу сосредоточиться на развитии бизнеса!"
+                        <h3>Михаил</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            "Перешёл на ИИ для документооборота полгода назад. Очень доволен результатом - отчёты готовлю в разы быстрее. Раньше бухгалтеру платил 15к в месяц, теперь справляюсь сам. Определённо буду продолжать пользоваться."
                         </p>
                         <div class="mt-4 text-yellow-400">⭐⭐⭐⭐⭐</div>
-                        <div class="text-sm text-gray-400 mt-2">Основатель IT-стартапа</div>
+                        <div class="text-sm text-gray-400 mt-2">Небольшой IT-сервис</div>
                     </div>
                     
                     <div class="slider-card slider-secondary" data-position="right">
                         <div class="slider-icon">
                             <img src="static/images/woman-2.png" alt="Елена Козлова" class="w-16 h-16 rounded-full object-cover" />
                         </div>
-                        <h3>Елена Козлова</h3>
-                        <p class="text-gray-300 leading-relaxed italic">
-                            "Создание контента для соцсетей теперь занимает считанные минуты. ИИ подбирает идеальные хештеги и пишет продающие тексты!"
+                        <h3>Елена К.</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            "Для инстаграма стала использовать - да, экономит время. Хештеги подбирает неплохо, тексты правда иногда получаются слишком "продажными", приходится смягчать. Но всё равно быстрее, чем самой придумывать каждый день."
                         </p>
-                        <div class="mt-4 text-yellow-400">⭐⭐⭐⭐⭐</div>
-                        <div class="text-sm text-gray-400 mt-2">Индивидуальный диетолог</div>
+                        <div class="mt-4 text-yellow-400">⭐⭐⭐⭐</div>
+                        <div class="text-sm text-gray-400 mt-2">Консультант по питанию</div>
                     </div>
                     
                     <!-- Дополнительные карточки для карусели (скрыты изначально) -->
@@ -710,24 +1220,24 @@
                         <div class="slider-icon">
                             <img src="static/images/man-2.png" alt="Алексей Иванов" class="w-16 h-16 rounded-full object-cover" />
                         </div>
-                        <h3>Алексей Иванов</h3>
-                        <p class="text-gray-300 leading-relaxed italic">
-                            "Благодаря ИИ-ассистенту я смог запустить свой онлайн-магазин за один день. Все документы, дизайн и тексты - всё готово!"
+                        <h3>Алексей</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            "Запускал интернет-магазин автозапчастей - нужно было создать кучу контента: описания товаров, визитки, прайс-листы. ИИ помог сделать всё за неделю. Особенно порадовали качественные тексты для карточек товаров."
                         </p>
                         <div class="mt-4 text-yellow-400">⭐⭐⭐⭐⭐</div>
-                        <div class="text-sm text-gray-400 mt-2">Предприниматель</div>
+                        <div class="text-sm text-gray-400 mt-2">Онлайн-магазин автозапчастей</div>
                     </div>
                     
                     <div class="slider-card slider-hidden" data-position="hidden">
                         <div class="slider-icon">
                             <img src="static/images/woman-3.png" alt="Ольга Соколова" class="w-16 h-16 rounded-full object-cover" />
                         </div>
-                        <h3>Ольга Соколова</h3>
-                        <p class="text-gray-300 leading-relaxed italic">
-                            "ИИ помог мне создать профессиональный брендинг для моего бьюти-бизнеса. Логотип, визитки, фирменный стиль - всё идеально!"
+                        <h3>Ольга</h3>
+                        <p class="text-gray-300 leading-relaxed">
+                            "Использую для создания прайс-листов и рекламных материалов. Качество неплохое, времени экономит много. Правда логотип пришлось дизайнеру всё равно доделывать, но основу ИИ дал хорошую. В итоге потратила в разы меньше денег."
                         </p>
-                        <div class="mt-4 text-yellow-400">⭐⭐⭐⭐⭐</div>
-                        <div class="text-sm text-gray-400 mt-2">Владелец салона красоты</div>
+                        <div class="mt-4 text-yellow-400">⭐⭐⭐⭐</div>
+                        <div class="text-sm text-gray-400 mt-2">Салон красоты "Империя"</div>
                     </div>
                 </div>
                 
@@ -750,7 +1260,7 @@
     <!-- CTA Section -->
     <section class="relative py-20 section-gradient-purple">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
+            <div class="text-center">
                 <h2 class="text-3xl font-bold mb-6 font-display" data-aos="fade-up">
                     Начните автоматизировать бизнес-задачи прямо сейчас
                 </h2>
@@ -758,10 +1268,9 @@
                     Доступ к ИИ-помощнику для создания лендингов, подготовки документов и автоматизации рутинных задач
                 </p>
                 <div class="flex flex-wrap justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
-<button class="registration-btn w-64 px-10 py-2 bg-transparent border-2 border-primary-accent text-primary-light hover:bg-primary-accent/10 rounded-xl font-semibold transition shadow-lg whitespace-nowrap" onclick="window.location.href='/business_ai/auth'">
+                    <button class="registration-btn inline-flex items-center justify-center px-10 py-4 bg-transparent border-2 border-primary-accent text-gray-700 hover:bg-primary-accent hover:text-white rounded-xl font-semibold transition shadow-lg text-center min-w-max" onclick="window.location.href='/business_ai/auth'">
                         Попробовать бесплатно
                     </button>
-                    
                 </div>
                 <div class="mt-12 flex flex-wrap justify-center gap-8 text-sm">
                     <div class="flex items-center bg-white/5 px-4 py-2 rounded-full shadow-inner">
@@ -865,16 +1374,23 @@
             </div>
 
             <div class="border-t mt-12 pt-8" style="border-color: #38c96a;">
-                <div class="flex flex-col md:flex-row justify-between items-center">
-                    <p class="text-gray-400 text-sm">© 2025 Мой Ассистент. Все права защищены.</p>
-                    <div class="company-info text-sm mt-8 md:mt-0">
-                        <p>ОГРН 1187746829050 ИНН 7709876543 КПП 770901001</p>
-                        <p>р/с 40702810938000123456 в ПАО «СБЕРБАНК», г. Москва</p>
-                        <p>БИК 044525225 к/с 30101810400000000225</p>
+                <div class="flex flex-col md:flex-row justify-between items-start gap-6">
+                    <!-- Левая часть: Копирайт и реквизиты -->
+                    <div class="flex-grow">
+                        <p class="text-gray-400 text-sm mb-3">© 2025 Мой Ассистент. Все права защищены.</p>
+                        <div class="company-info text-sm">
+                            <p class="text-gray-400 mb-1">ОГРН 1187746829050 ИНН 7709876543 КПП 770901001</p>
+                            <p class="text-gray-400 mb-1">р/с 40702810938000123456 в ПАО «СБЕРБАНК», г. Москва</p>
+                            <p class="text-gray-400">БИК 044525225 к/с 30101810400000000225</p>
+                        </div>
                     </div>
-                    <div class="mt-4 md:mt-0 space-x-4">
-                        <a href="./privacy" class="text-gray-400 hover:text-white transition text-sm">Политика конфиденциальности</a>
-                        <a href="./offer" class="text-gray-400 hover:text-white transition text-sm">Публичная оферта</a>
+                    
+                    <!-- Правая часть: Ссылки на документы -->
+                    <div class="flex-shrink-0">
+                        <div class="flex flex-col gap-2 text-sm text-right">
+                            <a href="./privacy" class="text-gray-400 hover:text-white transition">Политика конфиденциальности</a>
+                            <a href="./offer" class="text-gray-400 hover:text-white transition">Публичная оферта</a>
+                        </div>
                     </div>
                 </div>
             </div>
