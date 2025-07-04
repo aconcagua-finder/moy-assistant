@@ -166,19 +166,16 @@ function init3DSlider() {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Получаем базовый URL из текущего пути
-    const baseUrl = window.location.pathname.includes('/legal_ai') ? '/legal_ai/' : '/';
-    
     const registrationButtons = document.querySelectorAll('.registration-btn');
-    console.log('Found registration buttons:', registrationButtons.length); // Выведем количество найденных кнопок
+    console.log('Found registration buttons:', registrationButtons.length);
     
     registrationButtons.forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
             console.log('Sending Metrika event: registration_click');
-            ym(99139090, 'reachGoal', 'registration_click');
+            ym(103196988, 'reachGoal', 'registration_click');
             console.log('Event sent, redirecting...');
-            window.location.href = baseUrl + 'legal_ai/auth';
+            window.location.href = 'https://aiprosto.pro/users/register/';
         });
     });
 });
@@ -304,9 +301,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function initTimeTabs() {
     const tabButtons = document.querySelectorAll('.time-tab-btn');
     const tabContents = document.querySelectorAll('.time-tab-content');
-    let autoSwitchInterval;
     let currentTabIndex = 0;
-    const autoSwitchDelay = 8000; // 8 секунд
 
     if (!tabButtons.length || !tabContents.length) return;
 
@@ -339,75 +334,16 @@ function initTimeTabs() {
         }
     }
 
-    /**
-     * Переключает на следующую вкладку автоматически
-     */
-    function autoSwitchNext() {
-        const tabs = ['landing', 'documents', 'content', 'design', 'social', 'budget'];
-        currentTabIndex = (currentTabIndex + 1) % tabs.length;
-        switchTab(tabs[currentTabIndex], currentTabIndex);
-    }
-
-    /**
-     * Запускает автоматическое переключение
-     */
-    function startAutoSwitch() {
-        stopAutoSwitch();
-        autoSwitchInterval = setInterval(autoSwitchNext, autoSwitchDelay);
-    }
-
-    /**
-     * Останавливает автоматическое переключение
-     */
-    function stopAutoSwitch() {
-        clearInterval(autoSwitchInterval);
-    }
-
     // Добавляем обработчики клика для каждой кнопки
     tabButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
             const targetTab = button.getAttribute('data-tab');
             switchTab(targetTab, index);
-            
-            // Перезапускаем автопереключение
-            stopAutoSwitch();
-            setTimeout(startAutoSwitch, autoSwitchDelay); // Даём пользователю время прочитать
-        });
-
-        // Останавливаем автопереключение при наведении
-        button.addEventListener('mouseenter', stopAutoSwitch);
-        button.addEventListener('mouseleave', () => {
-            setTimeout(startAutoSwitch, 2000); // Перезапускаем через 2 секунды
         });
     });
 
-    // Останавливаем автопереключение при наведении на контент
-    tabContents.forEach(content => {
-        content.addEventListener('mouseenter', stopAutoSwitch);
-        content.addEventListener('mouseleave', () => {
-            setTimeout(startAutoSwitch, 2000);
-        });
-    });
-
-    // Инициализация: показываем первую вкладку и запускаем автопереключение
+    // Инициализация: показываем первую вкладку
     switchTab('landing', 0);
-    startAutoSwitch();
-
-    // Останавливаем автопереключение при прокрутке в секции
-    const timeSection = document.querySelector('#time-tabs').closest('section');
-    if (timeSection) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    startAutoSwitch();
-                } else {
-                    stopAutoSwitch();
-                }
-            });
-        }, { threshold: 0.3 });
-        
-        observer.observe(timeSection);
-    }
 
     // Поддержка свайпов для мобильных устройств
     const tabContainer = document.querySelector('.lg\\:grid-cols-2');
@@ -426,18 +362,16 @@ function initTimeTabs() {
         
         function handleSwipe() {
             const swipeThreshold = 50;
+            const tabs = ['landing', 'documents', 'content', 'design', 'social', 'budget'];
+            
             if (touchEndX < touchStartX - swipeThreshold) {
                 // Свайп влево - следующая вкладка
-                autoSwitchNext();
-                stopAutoSwitch();
-                setTimeout(startAutoSwitch, autoSwitchDelay);
+                currentTabIndex = (currentTabIndex + 1) % tabs.length;
+                switchTab(tabs[currentTabIndex], currentTabIndex);
             } else if (touchEndX > touchStartX + swipeThreshold) {
                 // Свайп вправо - предыдущая вкладка
-                const tabs = ['landing', 'documents', 'content', 'design', 'social', 'budget'];
                 currentTabIndex = (currentTabIndex - 1 + tabs.length) % tabs.length;
                 switchTab(tabs[currentTabIndex], currentTabIndex);
-                stopAutoSwitch();
-                setTimeout(startAutoSwitch, autoSwitchDelay);
             }
         }
     }
